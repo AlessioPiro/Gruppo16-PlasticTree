@@ -35,11 +35,53 @@
 					</form>
 				</div>
 		</div>
-		<div id="obiettivi">
-			<!-- Obiettivi con JS -->
+		<div class="obiettivi">
+			<h3>I miei obiettivi</h3>
+			<div class="obiettiviContenitore">
+				<div class="immaginiObiettiviContenitore">
+					<img class="obiettivo1" alt="" src="">
+					<img class="obiettivo2" alt="" src="">
+					<img class="obiettivo3" alt="" src="">
+					<img class="obiettivo4" alt="" src="">
+					<img class="obiettivo5" alt="" src="">
+				</div>
+				<form action="" method="POST" name="">
+					<input class="mostraAltroPulsante" type="submit" value="Mostra altro">
+				</form>
+			</div>
 		</div>
-		<div id="attivita">
-	
+		<div class="attivita">
+			<h3>Attivita'</h3>
+			<% //For %>
+			<div class="post">
+				<div class="creatorePost">
+					<img class="postFotoUtente" src="">
+					<h4 class="postNomeUtente"></h4>
+					<img class="pulsanteCondivisione" alt="" src="">
+				</div>
+				<div class="contenutoPost">
+					<p class="postTesto"></p>
+					<img class="postImmagine" alt="" src="">
+					<div class="interazioneContainer">
+						<div class="pulsantiContenitore">
+							<div class="miPiaceContenitore">
+								<div class="numeroMiPiaceContenitore">
+									<p class="numeroMiPiace"></p>
+									<img class="cuore" src="">
+								</div>
+								<form action="" method="POST" name="">
+									<input class="miPiace" type="submit" value="Mi piace">
+								</form>
+							</div>
+							<form action="" method="POST" name="">
+								<input class="commenti" type="submit" value="Commenti">
+							</form>
+						</div>
+						<p class="data"></p>
+					</div>
+				
+				</div>
+			</div>
 		</div>
 		<jsp:include page="footer.jsp"/>
 	</body>
