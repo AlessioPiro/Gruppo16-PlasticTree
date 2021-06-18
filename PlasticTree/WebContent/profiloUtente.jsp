@@ -4,15 +4,16 @@
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="Css/profiloUtente.css" type="text/css">
 	<title>Profilo - Plastic Tree</title>
 	</head>
 	<body>
 		<jsp:include page="header.jsp"/>
-		<div id="fotoENome">
-		
-			<h2>Java nome</h2>
+		<div class="fotoENome">
+			<img class="fotoProfiloUtente" alt="" src="fotoUtente/placeholderUtente.png">
+			<h2 class="nomeProfiloUtente">Java nome</h2>
 		</div>
-		<div id="informazioni">
+		<div class="informazioni">
 			<h3>Informazioni</h3>
 				<div>
 					<form class="information-form" name="infForm" onsubmit="return validateForm()" action="nomeServlet" method="POST">
@@ -39,11 +40,11 @@
 			<h3>I miei obiettivi</h3>
 			<div class="obiettiviContenitore">
 				<div class="immaginiObiettiviContenitore">
-					<img class="obiettivo1" alt="" src="">
-					<img class="obiettivo2" alt="" src="">
-					<img class="obiettivo3" alt="" src="">
-					<img class="obiettivo4" alt="" src="">
-					<img class="obiettivo5" alt="" src="">
+					<img class="obiettivo" alt="" src="fotoObiettivi/1.png">
+					<img class="obiettivo" alt="" src="fotoObiettivi/1.png">
+					<img class="obiettivo" alt="" src="fotoObiettivi/1.png">
+					<img class="obiettivo" alt="" src="fotoObiettivi/1.png">
+					<img class="obiettivo" alt="" src="fotoObiettivi/1.png">
 				</div>
 				<form action="" method="POST" name="">
 					<input class="mostraAltroPulsante" type="submit" value="Mostra altro">
@@ -55,19 +56,19 @@
 			<% //For %>
 			<div class="post">
 				<div class="creatorePost">
-					<img class="postFotoUtente" src="">
-					<h4 class="postNomeUtente"></h4>
-					<img class="pulsanteCondivisione" alt="" src="">
+					<img class="postFotoUtente" src="fotoUtente/placeholderUtente.png">
+					<h4 class="postNomeUtente">Nome Utente</h4>
+					<img class="pulsanteCondivisione" alt="" src="icone/condividi.png">
 				</div>
 				<div class="contenutoPost">
-					<p class="postTesto"></p>
-					<img class="postImmagine" alt="" src="">
+					<p class="postTesto">Testo placeholder</p>
+					<img class="postImmagine" alt="" src="fotoObiettivi/1.png">
 					<div class="interazioneContainer">
 						<div class="pulsantiContenitore">
 							<div class="miPiaceContenitore">
 								<div class="numeroMiPiaceContenitore">
-									<p class="numeroMiPiace"></p>
-									<img class="cuore" src="">
+									<p class="numeroMiPiace">1</p>
+									<img class="cuore" src="icone/cuore.png">
 								</div>
 								<form action="" method="POST" name="">
 									<input class="miPiace" type="submit" value="Mi piace">
@@ -77,7 +78,7 @@
 								<input class="commenti" type="submit" value="Commenti">
 							</form>
 						</div>
-						<p class="data"></p>
+						<p class="data">DD/MM/AAAA</p>
 					</div>
 				
 				</div>

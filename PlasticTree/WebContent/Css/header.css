@@ -1,15 +1,15 @@
 body{margin: 0; padding: 0;}
-.header {background-color: #74C686; width: 100%; height: 100px; margin: 0px; border: 0px; padding: 0px; display: flex; align-items: center;}
+.header {background-color: #ABDCB6; width: 100%; height: 100px; margin: 0px; border: 0px; padding: 0px; display: flex; align-items: center;}
 .header_logo_img{float: left; margin-left:10px; width: 100px; height: 100px;}
 .header_logo_text{position: absolute; text-align: center; width: 100%; color: #4F4F4F; font-family: Verdana, Helvetica, sans-serif;}
 .ricerca{margin-left: auto; margin-right: 20px;}
 .search-form{display: inline-block !important; display: flex !important; flex-direction: row !important; align-items: center !important;}
 .icon{margin-left:10px; width: 50px; height: 50px;}
-.header_menu{background-color: white; width: 100%; height: 40px; margin: 0px; margin-top: -15px; padding: 0px; border: 0px;}
+.header_menu{background-color: white; width: 100%; height: 40px; margin: 0px; margin-top: -15px; padding: 0px; border: 0px; outline-style: solid; outline-width: 2px;}
 ul{justify-content: center; display: flex;}
 .header_menu_item{display: inline-block; text-align: center;}
 .header_menu_item a{color: black; display: block; padding: 10px; margin-bottom:10px; margin-right: 20px; text-decoration: none;}
-.header_menu_item a:hover{background: #74C686; color: #000000}/*animazione del menu 'sfondo colorato'*/
+.header_menu_item a:hover{background: #ABDCB6; color: #000000}/*animazione del menu 'sfondo colorato'*/
 
 input[type=search]{border: 3px solid #ccc; transition: 0.3s; width: 100%; border-radius: 10px; padding: 10px 6px;}
 input[type=search]:focus{border: 3px solid black; border-radius: 10px; padding: 10px 6px; outline: none;}
