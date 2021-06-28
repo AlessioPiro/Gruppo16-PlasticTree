@@ -1,0 +1,18 @@
+.obiettiviEScrittaContenitore{display: flex; width:100%; flex-direction: column; align-items: center;}
+.obiettiviTesto{font-size: 1.2em; font-weight:bold; text-align: center;}
+
+.obiettiviContenitore{display: flex; width:100%; flex-direction: column; align-items: center; outline: 2px solid black;}
+.obiettivo{display: flex; width: 96%; flex-direction: row; align-items: center; outline: 1px solid black; padding-left: 2%; padding-right: 2%;}
+#obiettivoRiscattato{background-color: #ABDCB6;}
+.obiettivoFoto{width: 80px; height: 80px; border-radius: 50%; box-shadow: 5px 5px 5px #ccc; -moz-box-shadow: 5px 5px 5px #ccc; -webkit-box-shadow: 5px 5px 5px #ccc; -khtml-box-shadow: 5px 5px 5px #ccc;}
+
+.scritteContenitore{display: flex; flex-direction: column; font-size: 1.2em; text-align: left; margin-left: 20px; height: 100px; justify-content: center;}
+.titoloObiettivo{font-weight:bold; margin: 0px; padding: 0px;}
+.descrizioneObiettivo{margin: 0px; padding: 0px;}
+.ricompensaObiettivo{margin: 0px; padding: 0px;}
+
+.formRiscatta{margin-left: auto;}
+.pulsanteRiscattaRiscattabile{background-color: white; color: black; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
+.pulsanteRiscattaRiscattabile:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
+.pulsanteRiscattaBloccato{background-color: grey;  color: black; border: none; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; border: 1px solid black; pointer-events: none;}
+.scrittaRiscattato{color: black; font-family: Verdana, Helvetica, sans-serif; font-size:15px;}

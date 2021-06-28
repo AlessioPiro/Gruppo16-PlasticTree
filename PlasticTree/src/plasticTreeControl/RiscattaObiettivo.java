@@ -1,8 +1,6 @@
 package plasticTreeControl;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AltroUtenteServlet
+ * Servlet implementation class RiscattaObiettivo
  */
-@WebServlet("/AltroUtenteServlet")
-public class AltroUtenteServlet extends HttpServlet {
+@WebServlet("/RiscattaObiettivo")
+public class RiscattaObiettivo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AltroUtenteServlet() {
+    public RiscattaObiettivo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,10 +30,11 @@ public class AltroUtenteServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		synchronized(session) {
-			//Recupera l'id dell'utente selezionato
-			//cerca l'utente selezionato nei dao
-			//passa l'utente come parametro
-			request.getRequestDispatcher("altroUtente.jsp").forward(request, response);
+			//recupera l'id dell'utente attuale
+			//recupera l'array di obiettivi
+			//recupera l'obiettivo riscattato
+			//cambia lo stato "riscattato" dell'obiettivo in quell'array a true
+			request.getRequestDispatcher("ObiettiviUtenteServlet").forward(request, response);
 		}
 	}
 
