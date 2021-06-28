@@ -18,6 +18,7 @@ public class Utente {
 		this.follower = new ArrayList<Utente>();
 		this.post = new ArrayList<Post>();
 		this.obiettivi = new ArrayList<Obiettivo>();
+		
 	}
 	
 	public Utente(String id, String nome, String cognome, Date nascita, String indirizzo, String email, String password,

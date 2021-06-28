@@ -1,0 +1,19 @@
+input[type=text], input[type = password], input[type = number]{border: 1px solid #ccc; transition: 0.3s; width: 30%; border-radius: 10px; padding: 5px 3px;}
+input[type=text]:focus, input[type= password]:focus, input[type = email]:focus{border: 1px solid black; border-radius: 10px; padding: 5px 3px; outline: none;}
+input[type="submit"]{background-color: white;  color: black; border: none; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
+input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
+
+
+.bonificoDiv{margin-top: 2%; background-color: #ABDCB6; width:98%; padding-top:2%; padding-bottom:2%; padding-left:2%;}
+.bonifico-form{width:100%; margin: 0px auto; margin-bottom: 10px;}
+.cartalogo_img{width:50px; height:30px; margin-top:2%; margin-left:6%;}
+
+.paypalDiv{margin-top: 2%; width:98%; padding-left:2%;margin-bottom:4%}
+.paypal-form{width:100%; margin: 0px auto; margin-bottom: 10px;}
+.paypal{width:80px; height:30px; margin-left:2%;}
+
+.creditoDiv{margin-top: 2%; margin-bottom:2%; padding-left:2%; width:98%;}
+.creditoName{margin-left:45%;}
+.creditoImport{margin-left:46%;}
+.creditoInfo{margin-left:30%;}
+.creditoText{color:#FF0000}

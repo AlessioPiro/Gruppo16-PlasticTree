@@ -27,9 +27,9 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 
 .post{display: flex; width:400px; flex-direction: column; outline: 1px solid black; margin-bottom: 20px;}
 .creatorePost{display: flex; width: 96%; max-height: 40px; align-items: center; flex-direction: row; padding-left: 2%; padding-right: 2%; background-color: white; border-bottom: 1px solid black;}
-.postFotoUtente{width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;}
+.postFotoUtente{width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;}
 .postNomeUtente{}
-.pulsanteCondivisione{width: 30px; height: 30px; float: right; padding-left: 55%; margin-left: 10px;}
+.pulsanteCondivisione{width: 30px; height: 30px; float: right; margin-left: 45%; padding-left: 10px;}
 
 .contenutoPost{width: 100%; display: flex; flex-direction: column; background-color: #ABDCB6; align-items: center; padding-bottom: 10px;}
 .postTesto{}
