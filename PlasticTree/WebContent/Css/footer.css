@@ -1,4 +1,8 @@
 .footer{width: 100%; height: 45px; background-color: #74C686; color: white; display: flex; align-items: center;}
-.footer_text{ float:right; margin-left: 5%; font-size: 1vw;}
-.header_logo_img{float: left;width: 200px; height: 100px;}
-.footer_privacy{ margin-left: 20%; font-size: 1vw;}
+.footer_text{ float:right; margin-left: 5%; font-size: 15px; font-family: Verdana, Helvetica, sans-serif;}
+.header_logo_img{float: left; max-width: 200px; max-height: 100px;}
+.footer_privacy{ margin-left: 20%; font-size: 15px; font-family: Verdana, Helvetica, sans-serif;}
+
+@media (max-width: 850px){
+	.footer_text{display: none;}
+}

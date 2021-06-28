@@ -24,7 +24,8 @@
 	<section class="header_menu">
 	<nav>
 		<ul>
-			<li class="header_menu_item"><a href="ServletProv">Aggiungi Credito</a></li>
+			<li class="header_menu_item" id="creditoDesktop"><a href="ServletProv">Aggiungi Credito</a></li>
+			<li class="header_menu_item" id="creditoMobile"><a href="ServletProv">Codice</a></li>
 			<li class="header_menu_item"><a href="ServletProv">Portafoglio</a></li>
 			<li class="header_menu_item"><a href="ServletProv">Account</a></li>
 			<li class="header_menu_item"><a href="ServletProv">Obiettivi</a></li>

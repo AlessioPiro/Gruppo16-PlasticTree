@@ -16,9 +16,9 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div class="creditoDiv">
-    <div class="creditoName"><h2>Credito</h2></div>
-    <div class="creditoImport"><h2 class="creditoText"<%if(credit<10.0f){%>style="color:#FF0000"<%}else{%>style="color:#66ff00"<%} %>>&euro;<%=credit %> </h2></div>
-    <div class="creditoInfo"><h4>Il tuo credito deve essere uguale o superiore a &euro;10,00 per riscuotere! </h4></div>
+    <div class="creditoName">Credito</div>
+    <div class="creditoImport"><p class="creditoText"<%if(credit<10.0f){%>style="color:#FF0000"<%}else{%>style="color:#66ff00"<%} %>>&euro;<%=credit %> </p></div>
+    <div class="creditoInfo">Il tuo credito deve essere uguale o superiore a &euro;10,00 per riscuotere!</div>
 </div>
 <div class="bonificoDiv">
                     <form class="bonifico-form" name="bonificoForm" onsubmit="return validateForm()" action="PortafoglioServlet" method="POST">

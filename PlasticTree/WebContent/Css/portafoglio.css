@@ -12,8 +12,8 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 .paypal-form{width:100%; margin: 0px auto; margin-bottom: 10px;}
 .paypal{width:80px; height:30px; margin-left:2%;}
 
-.creditoDiv{margin-top: 2%; margin-bottom:2%; padding-left:2%; width:98%;}
-.creditoName{margin-left:45%;}
-.creditoImport{margin-left:46%;}
-.creditoInfo{margin-left:30%;}
-.creditoText{color:#FF0000}
+.creditoDiv{display: flex; flex-direction: column; align-items: center; margin-top: 2%; margin-bottom:2%; width:100%;}
+.creditoName{font-family: Verdana, Helvetica, sans-serif; font-weight: bold; font-size: 25px;}
+.creditoImport{font-family: Verdana, Helvetica, sans-serif; font-weight: bold; font-size: 40px;}
+.creditoInfo{font-family: Verdana, Helvetica, sans-serif; text-align: center; font-size: 15px;}
+.creditoText{color:#FF0000; font-family: Verdana, Helvetica, sans-serif; margin: 10px; padding: 0px;}
