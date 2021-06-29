@@ -3,7 +3,7 @@
 <%@page import="plasticTreeModel.Utente" %> 
 <%@page import="plasticTreeModel.Post" %> 
 <%@ page import="java.util.*" %>  
-<% Utente u=(Utente) request.getSession().getAttribute("role"); %>
+<% Utente u=(Utente) request.getSession().getAttribute("utente"); %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -56,6 +56,7 @@
 					<input class="mostraAltroPulsante" type="submit" value="Mostra altro">
 				</form>
 			</div>
+			
 		</div>
 		<div class="attivita">
 			<h3 class="attivitaTesto">Attivita'</h3>
@@ -73,7 +74,7 @@
 					</div>
 					<div class="contenutoPost">
 						<p class="postTesto"><%=post.getTesto() %></p>
-						<img class="postImmagine" alt="" src="fotoObiettivi/<%=post.getIdFoto() %>.png">
+						<img class="postImmagine" alt="" src="fotoObiettivi/<%=post.getIdPost() %>.png">
 						<div class="interazioneContainer">
 							<div class="pulsantiContenitore">
 							   <%boolean mioLike=false;

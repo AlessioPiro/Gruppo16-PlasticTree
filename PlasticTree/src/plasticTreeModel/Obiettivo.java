@@ -2,13 +2,11 @@ package plasticTreeModel;
 
 public class Obiettivo {
 	
-	public Obiettivo(String idObiettivo, String titolo, String descrizione, float ricompensa, boolean raggiunto, boolean riscattato) {
+	public Obiettivo(String idObiettivo, String titolo, String descrizione, float ricompensa) {
 		this.idObiettivo = idObiettivo;
 		this.titolo = titolo;
 		this.descrizione = descrizione;
 		this.ricompensa = ricompensa;
-		this.raggiunto = raggiunto;
-		this.riscattato = riscattato;
 	}
 	public String getIdObiettivo() {
 		return idObiettivo;
@@ -34,23 +32,9 @@ public class Obiettivo {
 	public void setRicompensa(float ricompensa) {
 		this.ricompensa = ricompensa;
 	}
-	public boolean isRaggiunto() {
-		return raggiunto;
-	}
-	public void setRaggiunto(boolean raggiunto) {
-		this.raggiunto = raggiunto;
-	}
-	public boolean isRiscattato() {
-		return riscattato;
-	}
-	public void setRiscattato(boolean riscattato) {
-		this.riscattato = riscattato;
-	}
 	
 	private String idObiettivo;
 	private String titolo;
 	private String descrizione;
 	private float ricompensa;
-	private boolean raggiunto;
-	private boolean riscattato;
 }

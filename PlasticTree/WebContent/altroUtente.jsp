@@ -84,7 +84,7 @@
 					</div>
 					<div class="contenutoPost">
 						<p class="postTesto"><%=post.getTesto() %></p>
-						<img class="postImmagine" alt="" src="fotoObiettivi/<%=post.getIdFoto() %>.png">
+						<img class="postImmagine" alt="" src="fotoObiettivi/<%=post.getIdPost() %>.png">
 						<div class="interazioneContainer">
 							<div class="pulsantiContenitore">
 							   <%boolean mioLike=false;

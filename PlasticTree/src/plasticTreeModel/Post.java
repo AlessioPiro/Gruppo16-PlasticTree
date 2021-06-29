@@ -3,19 +3,18 @@ import java.util.*;
 
 public class Post {
 
-	public Post(String testo, Utente utente, Date data, ArrayList<Commento> commenti, ArrayList<Utente> like, String idFoto) {
-		this.commenti = commenti;
+	public Post(String idPost, String testo, Utente utente, Date data, ArrayList<Utente> like) {
 		this.testo = testo;
 		this.data = data;
 		this.utente = utente;
 		this.like = like;
-		this.idFoto=idFoto;
+		this.idPost = idPost;
 	}
-	public ArrayList<Commento> getCommenti() {
-		return commenti;
+	public String getIdPost() {
+		return idPost;
 	}
-	public void setCommenti(ArrayList<Commento> commenti) {
-		this.commenti = commenti;
+	public void setIdPost(String idPost) {
+		this.idPost = idPost;
 	}
 	public String getTesto() {
 		return testo;
@@ -41,18 +40,12 @@ public class Post {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public String getIdFoto() {
-		return idFoto;
-	}
-	public void setIdFoto(String idFoto) {
-		this.idFoto = idFoto;
-	}
 	
-	private ArrayList<Commento> commenti;
+	private String idPost;
 	private String testo;
 	private Date data;
 	private Utente utente;
 	private ArrayList<Utente> like;
-	private String idFoto;
+	
 	
 }

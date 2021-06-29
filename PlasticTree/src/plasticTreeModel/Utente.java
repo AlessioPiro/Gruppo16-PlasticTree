@@ -17,12 +17,12 @@ public class Utente {
 		this.credito = 0;
 		this.follower = new ArrayList<Utente>();
 		this.post = new ArrayList<Post>();
-		this.obiettivi = new ArrayList<Obiettivo>();
+		this.obiettivi = new ArrayList<ObiettivoUtente>();
 		
 	}
 	
 	public Utente(String id, String nome, String cognome, Date nascita, String indirizzo, String email, String password,
-			float credito, ArrayList<Utente> follower, ArrayList<Post> post, ArrayList<Obiettivo> obiettivi) {
+			float credito, ArrayList<Utente> follower, ArrayList<Post> post, ArrayList<ObiettivoUtente> obiettivi) {
 		this.idUtente = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -96,10 +96,10 @@ public class Utente {
 	public void setPost(ArrayList<Post> post) {
 		this.post = post;
 	}
-	public ArrayList<Obiettivo> getObiettivi() {
+	public ArrayList<ObiettivoUtente> getObiettivi() {
 		return obiettivi;
 	}
-	public void setObiettivi(ArrayList<Obiettivo> obiettivi) {
+	public void setObiettivi(ArrayList<ObiettivoUtente> obiettivi) {
 		this.obiettivi = obiettivi;
 	}
 	
@@ -113,6 +113,6 @@ public class Utente {
 	private float credito;
 	private ArrayList<Utente> follower;
 	private ArrayList<Post> post;
-	private ArrayList<Obiettivo> obiettivi;
+	private ArrayList<ObiettivoUtente> obiettivi;
 	
 }
