@@ -10,6 +10,13 @@ public class Post {
 		this.like = like;
 		this.idPost = idPost;
 	}
+	public Post(String idPost, String testo, Utente utente) {
+		this.testo = testo;
+		this.data = new Date();
+		this.utente = utente;
+		this.like = new ArrayList<Utente>();
+		this.idPost = idPost;
+	}
 	public String getIdPost() {
 		return idPost;
 	}

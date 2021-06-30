@@ -16,13 +16,12 @@ public class Utente {
 		this.password = password;
 		this.credito = 0;
 		this.follower = new ArrayList<Utente>();
-		this.post = new ArrayList<Post>();
 		this.obiettivi = new ArrayList<ObiettivoUtente>();
-		
+		this.counterCodici = 0;
 	}
 	
 	public Utente(String id, String nome, String cognome, Date nascita, String indirizzo, String email, String password,
-			float credito, ArrayList<Utente> follower, ArrayList<Post> post, ArrayList<ObiettivoUtente> obiettivi) {
+			float credito, ArrayList<Utente> follower, ArrayList<ObiettivoUtente> obiettivi) {
 		this.idUtente = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -32,8 +31,8 @@ public class Utente {
 		this.password = password;
 		this.credito = credito;
 		this.follower = follower;
-		this.post = post;
 		this.obiettivi = obiettivi;
+		this.counterCodici = 0;
 	}
 	
 	public String getIdUtente() {
@@ -90,17 +89,18 @@ public class Utente {
 	public void setFollower(ArrayList<Utente> follower) {
 		this.follower = follower;
 	}
-	public ArrayList<Post> getPost() {
-		return post;
-	}
-	public void setPost(ArrayList<Post> post) {
-		this.post = post;
-	}
 	public ArrayList<ObiettivoUtente> getObiettivi() {
 		return obiettivi;
 	}
 	public void setObiettivi(ArrayList<ObiettivoUtente> obiettivi) {
 		this.obiettivi = obiettivi;
+	}
+	public int getCounterCodici() {
+		return counterCodici;
+	}
+
+	public void setCounterCodici(int counterCodici) {
+		this.counterCodici = counterCodici;
 	}
 	
 	private String idUtente;
@@ -111,8 +111,8 @@ public class Utente {
 	private String email;
 	private String password;
 	private float credito;
+	private int counterCodici;
 	private ArrayList<Utente> follower;
-	private ArrayList<Post> post;
 	private ArrayList<ObiettivoUtente> obiettivi;
 	
 }

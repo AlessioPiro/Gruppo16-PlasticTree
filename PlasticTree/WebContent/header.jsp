@@ -1,11 +1,14 @@
-<%@ page language="java" import="java.util.*, java.math.*" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" import="java.util.*, java.math.*, plasticTreeModel.*;" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <html>
 <%!
 	float creditoUtente;
 %>
 <%
-	creditoUtente = new BigDecimal(20.00).setScale(2, BigDecimal.ROUND_UP).floatValue();
+	creditoUtente = 20;
+	//Utente utente = (Utente) session.getAttribute("utente");
+	//Utente utente = new Utente("U1", "Lorenzo", "Aiello", new Date(), "Via Padova 33, Avellino", "laiello@gmail.com", "12345678");
+	//creditoUtente = utente.getCredito();
 %>
 <head> 
 <link rel="stylesheet" href="Css/header.css" type="text/css">
@@ -28,7 +31,7 @@
 			<li class="header_menu_item" id="creditoMobile"><a href="ServletProv">Codice</a></li>
 			<li class="header_menu_item"><a href="ServletProv">Portafoglio</a></li>
 			<li class="header_menu_item"><a href="ServletProv">Account</a></li>
-			<li class="header_menu_item"><a href="ServletProv">Obiettivi</a></li>
+			<li class="header_menu_item"><a href="ObiettiviUtenteServlet">Obiettivi</a></li>
 			<li class="header_menu_item"><a href="Logout">Logout</a></li>
 		</ul>
 	</nav>

@@ -1,12 +1,20 @@
 package plasticTreeControl;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import plasticTreeModel.Dao;
+import plasticTreeModel.Obiettivo;
+import plasticTreeModel.ObiettivoUtente;
+import plasticTreeModel.Utente;
 
 /**
  * Servlet implementation class RiscattaObiettivo
@@ -30,10 +38,11 @@ public class RiscattaObiettivo extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		synchronized(session) {
-			//recupera l'id dell'utente attuale
-			//recupera l'array di obiettivi
-			//recupera l'obiettivo riscattato
-			//cambia lo stato "riscattato" dell'obiettivo in quell'array a true
+			Dao dao = (Dao) session.getAttribute("dao");
+			Utente utente = (Utente) session.getAttribute("utente");
+			String idObiettivo = request.getParameter("id");
+			Utente prova = new Utente("U1", "Lorenzo", "Aiello", new Date(), "Via Padova 33, Avellino", "laiello@gmail.com", "12345678");
+			dao.riscattaObiettivo(prova.getIdUtente(), idObiettivo); //prova va sostituito con utente
 			request.getRequestDispatcher("ObiettiviUtenteServlet").forward(request, response);
 		}
 	}
