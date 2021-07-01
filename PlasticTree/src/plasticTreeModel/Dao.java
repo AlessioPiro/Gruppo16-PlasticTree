@@ -780,6 +780,17 @@ public class Dao {
 		return null;
 	}
 	
+	public String getIdObiettivo(String nome) //Restituisce l'id dell'obiettivo prendendo il nome in imput
+	{
+		ArrayList<Obiettivo> obiettivi =this.getTuttiObiettivi();
+		for(Obiettivo o : obiettivi) {
+			if(o.getTitolo().equals(nome)) {
+				return o.getTitolo();
+			}
+		}
+		return null;
+	}
+	
 	//Metodi ObiettivoUtente
 	
 	public ArrayList<ObiettivoUtente> getTuttiObiettiviUtente() //Restituisce tutti gli obiettivi utente
@@ -962,7 +973,7 @@ public class Dao {
 			}
 		}
 		String id = "P" + idTop;
-		String testo = utente.getNome() + " ha raggiunto l'obiettivo " + obiettivo.getTitolo();
+		String testo = utente.getNome() + " ha raggiunto l'obiettivo: " + obiettivo.getTitolo();
 		post = new Post(id, testo, utente);
 		this.getTuttiPost().add(post);
 		

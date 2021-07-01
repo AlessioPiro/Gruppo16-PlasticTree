@@ -47,6 +47,15 @@ public class Post {
 	public void setData(Date data) {
 		this.data = data;
 	}
+	public String getObiettivoPost() {
+		String obiettivo = "";
+		int num =testo.lastIndexOf(":");
+		if(num==-1) {
+			return obiettivo;
+		}
+		obiettivo = testo.substring(testo.lastIndexOf(":"));
+		return obiettivo;
+	}
 	
 	private String idPost;
 	private String testo;

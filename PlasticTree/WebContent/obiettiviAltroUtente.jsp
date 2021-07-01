@@ -24,16 +24,16 @@
 			nomeUtente = "Lorenzo";
 			cognomeUtente = "Aiello";
 			ArrayList<Obiettivo> obiettivi = new ArrayList<Obiettivo>();
-			Obiettivo test1 = new Obiettivo("1", "Primo Passo", "Inserisci il tuo primo codice.", 0, true, false);
-			Obiettivo test2 = new Obiettivo("2", "Frutti del Riciclaggio", "Riscuoti per la prima volta.", 0, false, false);
-			Obiettivo test3 = new Obiettivo("3", "Amici Verdi", "Segui piu' di dieci persone.", 0, true, true);
-			Obiettivo test4 = new Obiettivo("4", "Bottiglia di Bronzo", "Ricicla 10 bottiglie di plastica.", 0, true, true);
-			Obiettivo test5 = new Obiettivo("5", "Bottiglia d'Argento", "Bottiglia d'Argento.", 0, false, false);
-			obiettivi.add(test1);
-			obiettivi.add(test2);
-			obiettivi.add(test3);
-			obiettivi.add(test4);
-			obiettivi.add(test5);
+			//Obiettivo test1 = new Obiettivo("1", "Primo Passo", "Inserisci il tuo primo codice.", 0, true, false);
+			//Obiettivo test2 = new Obiettivo("2", "Frutti del Riciclaggio", "Riscuoti per la prima volta.", 0, false, false);
+			//Obiettivo test3 = new Obiettivo("3", "Amici Verdi", "Segui piu' di dieci persone.", 0, true, true);
+			//Obiettivo test4 = new Obiettivo("4", "Bottiglia di Bronzo", "Ricicla 10 bottiglie di plastica.", 0, true, true);
+			//Obiettivo test5 = new Obiettivo("5", "Bottiglia d'Argento", "Bottiglia d'Argento.", 0, false, false);
+			//obiettivi.add(test1);
+			//obiettivi.add(test2);
+			//obiettivi.add(test3);
+			//obiettivi.add(test4);
+			//obiettivi.add(test5);
 		%>
 		<div class="obiettiviEScrittaContenitore">
 			<h3 class="obiettiviTesto">Obiettivi di <%=nomeUtente%> <%=cognomeUtente%></h3>
@@ -45,8 +45,8 @@
 						titolo = o.getTitolo();
 						descrizione = o.getDescrizione();
 						ricompensa = o.getRicompensa();
-						raggiunto = o.isRaggiunto();
-						riscattato = o.isRiscattato();
+						//raggiunto = o.isRaggiunto();
+						// = o.isRiscattato();
 				%>
 				<%
 					if (!riscattato)

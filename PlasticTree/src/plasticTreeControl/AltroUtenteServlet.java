@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import plasticTreeModel.Dao;
+import plasticTreeModel.Utente;
+
 /**
  * Servlet implementation class AltroUtenteServlet
  */
@@ -31,10 +34,11 @@ public class AltroUtenteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
+		Dao dao =(Dao)request.getSession().getAttribute("dao");
 		synchronized(session) {
-			//Recupera l'id dell'utente selezionato
-			//cerca l'utente selezionato nei dao
-			//passa l'utente come parametro
+			String id=request.getParameter("altroUtente");
+			Utente u= dao.getUtente(id);
+			request.setAttribute("altroUtente", u);
 			request.getRequestDispatcher("altroUtente.jsp").forward(request, response);
 		}
 	}
