@@ -1193,6 +1193,7 @@ public class Dao {
 		Codice cod = this.getCodice(c);
 		cod.setRiscattato(true);
 		utente.setCounterCodici(utente.getCounterCodici() + 1);
+		this.getUtente(utente.getIdUtente()).setCredito(this.getUtente(utente.getIdUtente()).getCredito()+cod.getImporto());
 		
 		//Sblocco obiettivo O1
 		ObiettivoUtente o1 = this.getObiettivoUtente("O1", utente);

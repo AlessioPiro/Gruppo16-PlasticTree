@@ -101,13 +101,13 @@
 									   mioLike=true;
 								   }
 							   } %>
-								<div class="miPiaceContenitore"<%if(mioLike==true){%> style="background-color:#FF0000; display: flex; flex-direction: column; margin-bottom: 4px; margin-right: 10px;" <%} %>>
-									<div class="numeroMiPiaceContenitore">
+								<div class="miPiaceContenitore">
+									<div class="numeroMiPiaceContenitore"<%if(mioLike==true){%> style="background-color:#FF0000;" <%} %>>
 										<p class="numeroMiPiace"><%=post.getLike().size() %></p>
 										<img class="cuore" src="icone/cuore.png">
 									</div>
 									<form action="LikeServlet" method="POST" name="">
-										<input class="miPiace" type="submit" value="Mi piace">
+										<input class="miPiace" type="submit" value="Mi piace" <%if(mioLike==true){%> style="background-color:#FF0000;" <%} %>>
 										<input class="utenteLike" name="utenteLike" type="hidden" value="<%=u.getIdUtente() %> ">
 										<input class="idPost" name="idPost" type="hidden" value="<%=post.getIdPost() %> ">
 										<input class="pagina" name="pagina" type="hidden" value="profiloUtente.jsp">

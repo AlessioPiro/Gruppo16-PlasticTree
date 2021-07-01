@@ -1,0 +1,95 @@
+form{display: inline-block; margin: 2%}
+
+
+input[type="submit"]{background-color: white;  color: black; border: none; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
+input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
+
+.help{width:100%;height:100px;display: flex; flex-direction: column; align-items: center; border-bottom:2px solid black; margin-bottom:50px;}
+.helpImg{max-width: 200px; max-height: 200px;margin-left: 5px; margin-right: 5px; margin-top:-40px}
+
+
+
+.attivita{width: 100%; height: 100%; display: flex; flex-direction: column;}
+
+.attivitaTesto{margin-left: 5%;}
+
+.insiemePost{display: flex; width:100%; flex-direction: column; align-items: center;}
+
+.post{display: flex; width:400px; flex-direction: column; outline: 1px solid black; margin-bottom: 20px;}
+.creatorePost{display: flex; width: 96%; max-height: 40px; align-items: center; flex-direction: row; padding-left: 2%; padding-right: 2%; background-color: white; border-bottom: 1px solid black;}
+.postFotoUtente{width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;}
+.postNomeUtente{}
+.pulsanteCondivisione{width: 30px; height: 30px; float: right; margin-left: 45%; padding-left: 10px;}
+
+.contenutoPost{width: 100%; display: flex; flex-direction: column; background-color: #ABDCB6; align-items: center; padding-bottom: 10px;}
+.postTesto{}
+.postImmagine{width: 90px; height: 90px; border-radius: 50%;}
+.interazioneContainer{display: flex; width:90%; height: 100px; flex-direction: row; align-items: flex-end; padding-left: 5%; padding-right: 5%;}
+.pulsantiContenitore{display: flex; width:100%; flex-direction: row; align-items: flex-end;}
+.miPiaceContenitore{display: flex; flex-direction: column; margin-bottom: 4px; margin-right: 10px;}
+.numeroMiPiaceContenitore{display: flex; flex-direction: row; align-items: center; max-height: 30px; border-radius: 20% 20% 0% 0%; background-color: white; margin-bottom: -5px; margin-left: 2px; padding-left: 10px;}
+.numeroMiPiace{}
+.cuore{width: 20px; height: 20px;}
+.miPiace{}
+.commenti{}
+.data{}
+
+
+.wrapper{
+  min-height: 100%;
+  margin-bottom: -8em;
+}
+
+.push{
+  height: 8em;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+ 
+}
+
+.nested-accordion {
+  margin-top: 0.5em;
+  cursor: pointer;
+  display: flex; 
+  flex-direction: rows; 
+  align-items: center;
+}
+.nested-accordion h3 {
+  padding: 0 0.5em;
+}
+.nested-accordion .comment {
+  line-height: 1.5;
+  padding: 0.5em;
+}
+.nested-accordion h3 {
+  color: #9b334e;
+}
+.nested-accordion h3:before {
+  content: "-";
+  padding-right: 0.25em;
+  color: #becbd2;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: "Lucida Console", Monaco, monospace;
+  position: relative;
+  right: 0;
+}
+.nested-accordion h3.selected {
+  background: #9b334e;
+  color: #fff;
+}
+.nested-accordion h3.selected:before {
+  content: "+";
+}
+.nested-accordion .comment {
+  color: #768e9d;
+  border: 0.063em solid #9b334e;
+  border-top: none;
+}
+.nested-accordion a {
+  text-decoration: none;
+  color: #9b334e;
+}
