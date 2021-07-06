@@ -4,12 +4,13 @@ form{display: inline-block; margin: 2%}
 input[type="submit"]{background-color: white;  color: black; border: none; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
 input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
 
-.help{width:100%;height:100px;display: flex; flex-direction: column; align-items: center; border-bottom:2px solid black; margin-bottom:50px;}
-.helpImg{max-width: 200px; max-height: 200px;margin-left: 5px; margin-right: 5px; margin-top:-40px}
+.help{width:100%;height:100px; display: flex; flex-direction: column; align-items: center; border-bottom:2px solid black; margin-bottom:50px;}
+.helpImg{max-width: 200px; max-height: 200px;margin-left: 5px; margin-right: 5px; margin-top:-60px}
+.helpMsg{font-family: Verdana, Helvetica, sans-serif; font-size:12px; margin-left:250px; background-color: transparent; color:transparent; margin-top:10px;}
 
 
 
-.attivita{width: 100%; height: 100%; display: flex; flex-direction: column;}
+.attivita{width: 100%; height: 100%; display: flex; flex-direction: column; margin-top:-120px}
 
 .attivitaTesto{margin-left: 5%;}
 
@@ -35,10 +36,16 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 .data{}
 
 
+
 .wrapper{
   min-height: 100%;
-  margin-bottom: -8em;
+  margin-bottom: -100px;
+  margin-top:-40px;
+  border-bottom:2px solid black;
+  display: none;
 }
+
+.buttonClose{border: none; background-color: transparent; font-size:30px; color:#2b2b2b;}
 
 .push{
   height: 8em;
@@ -46,16 +53,13 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 
 .container {
   margin: 0 auto;
-  width: 80%;
+  width: 400px;
  
 }
 
 .nested-accordion {
   margin-top: 0.5em;
   cursor: pointer;
-  display: flex; 
-  flex-direction: rows; 
-  align-items: center;
 }
 .nested-accordion h3 {
   padding: 0 0.5em;
@@ -65,7 +69,7 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
   padding: 0.5em;
 }
 .nested-accordion h3 {
-  color: #9b334e;
+  color: #2b2b2b;
 }
 .nested-accordion h3:before {
   content: "-";
@@ -74,18 +78,18 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
   font-size: 1.5em;
   font-weight: 500;
   font-family: "Lucida Console", Monaco, monospace;
-  position: relative;
-  right: 0;
+  
 }
 .nested-accordion h3.selected {
-  background: #9b334e;
+  background: #ABDCB6;
   color: #fff;
+  border-radius: 20% 20% 0% 0%;
 }
 .nested-accordion h3.selected:before {
   content: "+";
 }
 .nested-accordion .comment {
-  color: #768e9d;
+  color: black;
   border: 0.063em solid #9b334e;
   border-top: none;
 }

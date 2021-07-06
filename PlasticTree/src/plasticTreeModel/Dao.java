@@ -715,6 +715,18 @@ public class Dao {
 		return ricercati;
 	}
 	
+	public boolean isSeguito(Utente utenteProtagonista, Utente utenteDaSeguire) {  //verifica se la persona data come secondo parametro è già seguita da quella data come primo parametro
+		
+		for(Utente u : utenteProtagonista.getFollower())
+		{
+			if (u.getIdUtente().equals(utenteDaSeguire.getIdUtente()))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public void seguiClick(Utente utenteProtagonista, Utente utenteDaSeguire) //Se la persona è già seguita, viene tolta dalla lista dei seguiti, altrimenti viene aggiunta alla lista dei seguiti
 	{
 		for(Utente u : utenteProtagonista.getFollower())

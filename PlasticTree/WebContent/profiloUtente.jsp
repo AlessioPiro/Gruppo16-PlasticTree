@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="plasticTreeModel.Utente" %> 
+<%@page import="plasticTreeModel.Commento" %> 
 <%@page import="plasticTreeModel.ObiettivoUtente" %> 
 <%@page import="plasticTreeModel.Post" %> 
 <%@page import="plasticTreeModel.Dao" %> 
 <%@ page import="java.util.*" %>  
 <% Utente u=(Utente) request.getSession().getAttribute("utente");
    Dao dao= (Dao) request.getSession().getAttribute("dao");
+   boolean confermaCond=false;
+   String profilo="";
+   if(request.getAttribute("confermaCond")!=null){
+   	confermaCond=(boolean) request.getAttribute("confermaCond");
+   	profilo=(String) request.getAttribute("profiloCond");
+   	}
    if(dao==null){dao=new Dao();} 
     if(u==null){u=dao.getUtente("U1");}%>
 <!DOCTYPE html>
@@ -16,7 +23,7 @@
 	<link rel="stylesheet" href="Css/profiloUtente.css" type="text/css">
 	<title>Profilo - Plastic Tree</title>
 	</head>
-	<body>
+	<body <%if(confermaCond==true){ %> onload="conferma(<%=profilo%>)"<%} %>>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script src="JS/profiloUtente.js"></script>
 		<jsp:include page="header.jsp"/>
@@ -81,14 +88,14 @@
 					<div class="creatorePost">
 						<img class="postFotoUtente" src="fotoUtente/<%=post.getUtente().getIdUtente() %>.png">
 						<h3 class="postNomeUtente"><%=post.getUtente().getNome() %> <%=post.getUtente().getCognome() %></h3>
-						<input class="pulsanteCondivisione" type="image" src="icone/condividi.png">
+						<input class="pulsanteCondivisione" type="image" src="icone/condividi.png" onclick="condividi('message')">
 						
 					</div>
 					<div class="contenutoPost">
 						<p class="postTesto"><%=post.getTesto() %></p>
 						<%String foto=post.getObiettivoPost();
-						  if(foto.equals("")){
-							  foto="nofoto";
+						  if(foto.equals("")==true){
+							  foto="noObbiettivo";
 						  }
 						  %>
 						<img class="postImmagine" alt="" src="fotoObiettivi/<%=foto %>.png">
@@ -114,7 +121,25 @@
 									</form>
 								</div>
 								
-									<input class="commenti" type="submit" value="Commenti" onclick="confirm('brand')">
+									<%ArrayList<Commento> c=dao.getCommentiPost(post.getIdPost());%>
+								
+								<datalist id="C<%=post.getIdPost() %>">
+								  <%for(int i=0;i<c.size();i++){ %>
+                                   <option value="<%=c.get(i).getTesto() %>" id="<%=c.get(i).getTesto() %>">
+                                     <%} %>
+                                 </datalist>
+                                 <datalist id="U<%=post.getIdPost() %>">
+								  <%for(int i=0;i<c.size();i++){ %>
+                                   <option value="<%=c.get(i).getUtente().getNome() %> <%=c.get(i).getUtente().getCognome() %>" id="<%=c.get(i).getUtente().getNome() %> <%=c.get(i).getUtente().getCognome() %>">
+                                     <%} %>
+                                 </datalist>
+                                 <datalist id="F<%=post.getIdPost() %>">
+								  <%for(int i=0;i<c.size();i++){ %>
+                                   <option value="<%=c.get(i).getUtente().getIdUtente() %>" id="<%=c.get(i).getUtente().getIdUtente() %>">
+                                     <%} %>
+                                 </datalist>
+								
+									<div class="commenti"><input type="submit" value="Commenti" onclick="messageInfo('<%=u.getIdUtente() %>', '<%=post.getIdPost() %>')"></div>
 								
 							</div>
 							<p class="data">[<%=post.getData().getDate() %>/<%=post.getData().getMonth()+1 %>/<%=post.getData().getYear()+1900 %>]</p>

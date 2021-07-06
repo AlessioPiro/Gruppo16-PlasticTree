@@ -1,3 +1,22 @@
+function over(){
+	document.getElementById("helpMsg").style.cssText= " color:black;"
+}
+function out(){
+	document.getElementById("helpMsg").style.cssText= "background-color: transparent; color:transparent;"
+}
+
+var vis = 1000;
+function faq(){
+	document.getElementById('wrapper').style.cssText= "display: flex; flex-direction: column; align-items: flex-end; background-image: url('icone/sfondoHome.png'); margin-top:-49.5px"
+		document.getElementById('attivita').style.cssText="margin-top:0px";
+	document.getElementById("help").style.cssText="border-bottom:none; background-image: url('icone/sfondoHome.png');"
+}
+function closeFaq(){
+	document.getElementById('wrapper').style.cssText= "display: none;"
+		document.getElementById('attivita').style.cssText="margin-top:-120px";
+	document.getElementById("help").style.cssText= "border-bottom:2px solid black; background-image: url('icone/sfondoHome.png');"
+}
+
 var vis = 1000;
 function messageInfo(idUtente,idPost) {
 	var array=[];

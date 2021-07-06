@@ -1,7 +1,6 @@
 package plasticTreeControl;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,18 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import plasticTreeModel.Dao;
+import plasticTreeModel.Utente;
 
 /**
- * Servlet implementation class CommentiServlet
+ * Servlet implementation class SeguiServlet
  */
-@WebServlet("/CommentiServlet")
-public class CommentiServlet extends HttpServlet {
+@WebServlet("/SeguiServlet")
+public class SeguiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CommentiServlet() {
+    public SeguiServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,28 +32,15 @@ public class CommentiServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Dao dao = (Dao)request.getSession().getAttribute("dao");
-		String idUtente= request.getParameter("idUtente");
-		String idPost= request.getParameter("idPost");
-		String commento=request.getParameter("commentiNew");
-		ArrayList<String> commenti=new ArrayList<String>();
-		boolean fine=false;
-		while(fine==false) {
-			if(commento.contains("-")) {
-				commenti.add(commento.substring(0, commento.indexOf("-")-1));
-				commento=commento.substring(commento.indexOf("-")+1);
-			}else {
-				commenti.add(commento);
-				fine=true;
-			}
-		}
+		Utente u= (Utente) request.getSession().getAttribute("utente");
+		String id=request.getParameter("utenteSeguito");
+		Utente u2= dao.getUtente(id);
 		
-		for(int i=0;i<commenti.size();i++) {
-			dao.aggiungiCommento(commenti.get(i), dao.getUtente(idUtente), idPost);
-		}
+		dao.seguiClick(u, u2);
 		
-		String pagina= request.getParameter("paginaPost");
+		request.setAttribute("altroUtente", u2);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
-	              "/"+pagina+".jsp");
+	              "/altroUtente.jsp");
 	      dispatcher.forward(request, response);
 	}
 

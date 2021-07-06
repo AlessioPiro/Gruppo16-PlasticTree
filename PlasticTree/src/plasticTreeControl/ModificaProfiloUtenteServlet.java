@@ -72,7 +72,7 @@ public class ModificaProfiloUtenteServlet extends HttpServlet {
 	      request.getSession().setAttribute("utente", um);
 	      
 	      RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
-	              "profiloUtente.jsp");
+	              "/profiloUtente.jsp");
 	      dispatcher.forward(request, response);
 	}
 

@@ -10,7 +10,7 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 
 .paypalDiv{margin-top: 2%; width:98%; padding-left:2%;margin-bottom:4%}
 .paypal-form{width:100%; margin: 0px auto; margin-bottom: 10px;}
-.paypal{width:80px; height:30px; margin-left:2%;}
+.paypal{max-width:100px; max-height:40px; margin-left:2%; border-radius: 15px; }
 
 .creditoDiv{display: flex; flex-direction: column; align-items: center; margin-top: 2%; margin-bottom:2%; width:100%;}
 .creditoName{font-family: Verdana, Helvetica, sans-serif; font-weight: bold; font-size: 25px;}

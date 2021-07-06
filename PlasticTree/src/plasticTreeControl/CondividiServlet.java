@@ -1,6 +1,8 @@
 package plasticTreeControl;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +28,12 @@ public class CondividiServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String profilo=request.getParameter("appCond");
+		request.setAttribute("confermaCond", true);
+		request.setAttribute("profiloCond", profilo);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
+	              "/profiloUtente.jsp");
+	      dispatcher.forward(request, response);
 	}
 
 	/**

@@ -5,7 +5,13 @@
     float credit=00.0f;
     if(u!=null){
     	credit=u.getCredito();
-    }%>
+    }
+    boolean confermaPag=false;
+   String msg="";
+   if(request.getAttribute("confermaCond")!=null){
+   	confermaPag=(boolean) request.getAttribute("confermaPag");
+   	msg=(String) request.getAttribute("magPag");
+   	}%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +19,7 @@
 <link rel="stylesheet" href="Css/portafoglio.css" type="text/css">
 <title>Portafoglio</title>
 </head>
-<body>
+<body <%if(confermaPag==true){ %> onload="conferma(<%=msg%>)"<%} %>>
 <jsp:include page="header.jsp"/>
 <div class="creditoDiv">
     <div class="creditoName">Credito</div>
@@ -27,9 +33,9 @@
 						Cognome: <input type="text" name="cognome" placeholder="Cognome" value="" required>
 						<div id="surnameErr"></div><br>
 						IBAN: <input type="text" name="iban" placeholder="XX-XX-X-XXXXX-XXXXX-XXXXXXXX" value="" required>
-						<div id="dataErr"></div><br> <!-- DA AGGIUNGERE AL POSTO DI USERNAME IN JS -->
+						<div id="ibanErr"></div><br> <!-- DA AGGIUNGERE AL POSTO DI USERNAME IN JS -->
 						Importo: <input type="number" name="importo" placeholder="xx.xx&euro;" min="1" step="0.01" value="" required>
-						<div id="addressErr"></div><br>
+						<div id="importoErr"></div><br>
 						Password: <input type="password" name="psw" placeholder="***********" value="">
 						<div id="passwordErr"></div><br>
 						<!-- RIMUOVERE ERRORI DELLA CARTA IN JS -->

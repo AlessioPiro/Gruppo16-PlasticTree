@@ -23,7 +23,7 @@ function messageInfo(message) {
     b.style.cssText = "width:100%; height:80px;margin-top:20px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
     
     input.style.cssText = "display: flex; flex-direction: column; align-items: center; font-family: Verdana, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; text-align:center;";
-    input.innerHTML="Inserisci sulla riga il codice fornito dai plasticATM per poter icrementare il tuo credito!"
+    input.innerHTML="Inserisci sulla riga il codice fornito dai plasticATM per poter incrementare il tuo credito!"
     
    img.src="icone/askLogo.png";
     img.style.cssText ="width: 20px; height: 20px; border-radius: 50%; position:absolute; top:10px; left:10px; margin-left: 5px; margin-right: 5px; margin-bottom:-4px;";

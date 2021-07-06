@@ -32,7 +32,7 @@ public class AggiungiCreditoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Dao dao = new Dao();
+		Dao dao = (Dao)request.getSession().getAttribute("dao");
 		Utente u= (Utente) request.getSession().getAttribute("utente");
 		String codice= request.getParameter("codice");
 		

@@ -53,7 +53,7 @@ public class Post {
 		if(num==-1) {
 			return obiettivo;
 		}
-		obiettivo = testo.substring(testo.lastIndexOf(":"));
+		obiettivo = testo.substring(testo.lastIndexOf(":")+1);
 		return obiettivo;
 	}
 	
