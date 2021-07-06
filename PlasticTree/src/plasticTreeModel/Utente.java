@@ -102,6 +102,17 @@ public class Utente {
 	public void setCounterCodici(int counterCodici) {
 		this.counterCodici = counterCodici;
 	}
+	public void removeFollower(String codice) {
+		ArrayList<Utente> daRimuovere = new ArrayList<Utente>();
+		for(Utente u : follower)
+		{
+			if(u.getIdUtente().equals(codice))
+			{
+				daRimuovere.add(u);
+			}
+		}
+		follower.removeAll(daRimuovere);
+	}
 	
 	private String idUtente;
 	private String nome;

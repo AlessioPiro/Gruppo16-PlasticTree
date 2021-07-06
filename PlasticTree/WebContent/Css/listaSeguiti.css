@@ -1,0 +1,19 @@
+input[type="submit"]{background-color: white; color: black; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
+input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
+
+.utenteCancellato{display: flex; width: 100%; flex-direction: row; align-items: center; outline: 1px solid black; background-color: #ABDCB6;}
+.scrittaUtenteCancellato{margin-left: 10px; font-family: Verdana, Helvetica, sans-serif; font-size:15px;}
+
+.seguitiEScrittaContenitore{display: flex; width:100%; flex-direction: column; align-items: center;}
+.seguitiTesto{font-size: 1.2em; font-weight:bold; text-align: center;}
+
+.nessunRisultato{display: flex; width: 100%; height:300px; flex-direction: row; align-items: center; color: grey; margin-bottom: 20px; justify-content: center;}
+
+.seguitiContenitore{display: flex; width:100%; flex-direction: column; align-items: center; outline: 2px solid black;}
+.utenteForm{margin-left: auto; margin-right: 10px;}
+.utenteFoto{width: 80px; height: 80px; border-radius: 50%; box-shadow: 5px 5px 5px #ccc; -moz-box-shadow: 5px 5px 5px #ccc; -webkit-box-shadow: 5px 5px 5px #ccc; -khtml-box-shadow: 5px 5px 5px #ccc; margin-left: 10px;}
+.utente{display: flex; width: 100%; flex-direction: row; align-items: center; outline: 1px solid black; background-color: white;}
+
+.scritteContenitore{display: flex; flex-direction: column; font-size: 1.2em; text-align: left; margin-left: 20px; height: 100px; justify-content: center;}
+.nomeUtente{font-weight:bold; margin: 0px; padding: 0px;}
+.citta{margin: 0px; padding: 0px;}

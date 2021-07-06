@@ -111,21 +111,21 @@ public class Dao {
 			followerU15 = new ArrayList<Utente>();
 			
 			//Creazione utenti
-			Utente u1 = new Utente("U1", "Lorenzo", "Aiello", utenteData1, "Via Padova 33, Avellino", "laiello@gmail.com", "12345678");
-			Utente u2 = new Utente("U2", "Patrizio", "Parroco", utenteData2, "Via Roma 10, Padova", "pparroco@gmail.com", "12345678");
-			Utente u3 = new Utente("U3", "Gennaro", "Aiello", utenteData3, "Via Milano 9, Bologna", "gaiello@gmail.com", "12345678");
-			Utente u4 = new Utente("U4", "Oronzo", "Cana", utenteData4, "Via Italia 15, Cesena", "ocana@gmail.com", "12345678");
-			Utente u5 = new Utente("U5", "Franco", "Maritozzi", utenteData5, "Via Francesco 123, Napoli", "fmaritozzi@gmail.com", "12345678");
-			Utente u6 = new Utente("U6", "Paola", "Aiello", utenteData6, "Via Gianni 54, Salerno", "paiello@gmail.com", "12345678");
-			Utente u7 = new Utente("U7", "Francesco", "Costa", utenteData7, "Via Bologna 35, Milano", "fcosta@gmail.com", "12345678");
-			Utente u8 = new Utente("U8", "Carla", "Ancelotti", utenteData8, "Via Sicilia 31, Napoli", "cancelotti@gmail.com", "12345678");
-			Utente u9 = new Utente("U9", "Donato", "Di Donato", utenteData9, "Via Padova 66, Benevento", "cancelotti@gmail.com", "12345678");
-			Utente u10 = new Utente("U10", "Marco", "Casco", utenteData10, "Via Benevento 75, Caserta", "mcasco@gmail.com", "12345678");
-			Utente u11 = new Utente("U11", "Lorenzo", "Ostuni", utenteData11, "Via Poste 17, Torino", "lostuni@gmail.com", "12345678");
-			Utente u12 = new Utente("U12", "Lorenzo", "Maglia", utenteData12, "Via Trento 105, Roma", "lmaglia@gmail.com", "12345678");
-			Utente u13 = new Utente("U13", "Giovanni", "Lorenzo", utenteData13, "Via Gaetano 103, Napoli", "glorenzo@gmail.com", "12345678");
-			Utente u14 = new Utente("U14", "Ida", "Ancelotti", utenteData14, "Via Toledo 13, Napoli", "iancelotti@gmail.com", "12345678");
-			Utente u15 = new Utente("U15", "Ester", "Penna", utenteData15, "Via Busta 79, Catania", "epenna@gmail.com", "12345678");
+			Utente u1 = new Utente("U1", "Lorenzo", "Aiello", utenteData1, "Via Padova 33, Avellino", "laiello@gmail.com", "12345678", 10, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u2 = new Utente("U2", "Patrizio", "Parroco", utenteData2, "Via Roma 10, Padova", "pparroco@gmail.com", "12345678", 5, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u3 = new Utente("U3", "Gennaro", "Aiello", utenteData3, "Via Milano 9, Bologna", "gaiello@gmail.com", "12345678", 20, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u4 = new Utente("U4", "Oronzo", "Cana", utenteData4, "Via Italia 15, Cesena", "ocana@gmail.com", "12345678", 1, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u5 = new Utente("U5", "Franco", "Maritozzi", utenteData5, "Via Francesco 123, Napoli", "fmaritozzi@gmail.com", "12345678", 6, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u6 = new Utente("U6", "Paola", "Aiello", utenteData6, "Via Gianni 54, Salerno", "paiello@gmail.com", "12345678", 5, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u7 = new Utente("U7", "Francesco", "Costa", utenteData7, "Via Bologna 35, Milano", "fcosta@gmail.com", "12345678", 6, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u8 = new Utente("U8", "Carla", "Ancelotti", utenteData8, "Via Sicilia 31, Napoli", "cancelotti@gmail.com", "12345678", 9, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u9 = new Utente("U9", "Donato", "Di Donato", utenteData9, "Via Padova 66, Benevento", "cancelotti@gmail.com", "12345678", 12, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u10 = new Utente("U10", "Marco", "Casco", utenteData10, "Via Benevento 75, Caserta", "mcasco@gmail.com", "12345678", 0, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u11 = new Utente("U11", "Lorenzo", "Ostuni", utenteData11, "Via Poste 17, Torino", "lostuni@gmail.com", "12345678", 0, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u12 = new Utente("U12", "Lorenzo", "Maglia", utenteData12, "Via Trento 105, Roma", "lmaglia@gmail.com", "12345678", 5, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u13 = new Utente("U13", "Giovanni", "Lorenzo", utenteData13, "Via Gaetano 103, Napoli", "glorenzo@gmail.com", "12345678", 2, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u14 = new Utente("U14", "Ida", "Ancelotti", utenteData14, "Via Toledo 13, Napoli", "iancelotti@gmail.com", "12345678", 3, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u15 = new Utente("U15", "Ester", "Penna", utenteData15, "Via Busta 79, Catania", "epenna@gmail.com", "12345678", 4, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
 			utenti.add(u1); utenti.add(u2); utenti.add(u3); utenti.add(u4); utenti.add(u5); utenti.add(u6); utenti.add(u7); utenti.add(u8); utenti.add(u9); utenti.add(u10); utenti.add(u11); utenti.add(u12); utenti.add(u13); utenti.add(u14); utenti.add(u15);
 			
 			//Riempimento della lista dei follower
@@ -181,7 +181,7 @@ public class Dao {
 			Obiettivo o13 = new Obiettivo("O13", "Utente Navigato", "Pubblica 50 post.", (float) 0.20);
 			Obiettivo o14 = new Obiettivo("O14", "Influencer", "Pubblica 200 post.", (float) 0.50);
 			Obiettivo o15 = new Obiettivo("O15", "Platino", "Raggiungi tutti gli obiettivi.", (float) 0.50);
-			obiettivi.add(o1); obiettivi.add(o2); obiettivi.add(o3); obiettivi.add(o4); obiettivi.add(o5); obiettivi.add(o6); obiettivi.add(o7); obiettivi.add(o8); obiettivi.add(o9); obiettivi.add(o10); obiettivi.add(o11); obiettivi.add(o12); obiettivi.add(o13); obiettivi.add(o14); obiettivi.add(o15);
+			obiettivi.add(o1); obiettivi.add(o2); obiettivi.add(o4); obiettivi.add(o5); obiettivi.add(o6); obiettivi.add(o3); obiettivi.add(o7); obiettivi.add(o8); obiettivi.add(o9); obiettivi.add(o10); obiettivi.add(o11); obiettivi.add(o12); obiettivi.add(o13); obiettivi.add(o14); obiettivi.add(o15);
 			
 			//Obiettivi degli utenti
 			//Utente 1
@@ -624,11 +624,12 @@ public class Dao {
 				idTop = tempIdNum;
 			}
 		}
-		String id = "U" + idTop;
+		int nuovoId = idTop + 1;
+		String id = "U" + nuovoId;
 		Date dataRegistrazione = null;
 		try
 		{
-			dataRegistrazione = parserModificaDati.parse(data);
+			dataRegistrazione = parser.parse(data);
 		}
 		catch(ParseException e)
 		{
@@ -697,20 +698,32 @@ public class Dao {
 		ricerca = ricerca.toLowerCase();
 		for (Utente u : this.getTuttiUtenti())
 		{
-			if (u.getNome().contains(ricerca) || u.getCognome().contains(ricerca))
+			String nomeCognome = u.getNome() + " " + u.getCognome();
+			String cognomeNome = u.getCognome() + " " + u.getNome();
+			if (u.getNome().toLowerCase().contains(ricerca) || u.getCognome().toLowerCase().contains(ricerca) || nomeCognome.toLowerCase().contains(ricerca) || cognomeNome.toLowerCase().contains(ricerca))
 			{
 				ricercati.add(u);
 			}
 		}
 		if(ricercati != null)
 		{
+			/*Iterator<Utente> iter = ricercati.iterator();
+
+			while (iter.hasNext()) {
+			    Utente u = iter.next();
+
+			    if (u.getIdUtente().equals(utente.getIdUtente()))
+			        iter.remove();
+			}*/
+			ArrayList<Utente> daRimuovere = new ArrayList<Utente>();
 			for(Utente u : ricercati)
 			{
 				if(u.getIdUtente().equals(utente.getIdUtente()))
 				{
-					ricercati.remove(u);
+					daRimuovere.add(u);
 				}
 			}
+			ricercati.removeAll(daRimuovere);
 		}
 		return ricercati;
 	}
@@ -775,6 +788,19 @@ public class Dao {
 			if(o.getIdObiettivo().equals(id))
 			{
 				return o;
+			}
+		}
+		return null;
+	}
+	
+	public String getIdObiettivo(String nome) //Restituisce l'id dell'obiettivo prendendo il nome in input
+	{
+		ArrayList<Obiettivo> obiettivi = this.getTuttiObiettivi();
+		for (Obiettivo o : obiettivi)
+		{
+			if(o.getTitolo().equals(nome))
+			{
+				return o.getTitolo();
 			}
 		}
 		return null;
@@ -961,8 +987,9 @@ public class Dao {
 				idTop = tempIdNum;
 			}
 		}
-		String id = "P" + idTop;
-		String testo = utente.getNome() + " ha raggiunto l'obiettivo " + obiettivo.getTitolo();
+		int nuovoId = idTop + 1;
+		String id = "P" + nuovoId;
+		String testo = utente.getNome() + " ha raggiunto l'obiettivo: " + obiettivo.getTitolo();
 		post = new Post(id, testo, utente);
 		this.getTuttiPost().add(post);
 		
@@ -1013,7 +1040,8 @@ public class Dao {
 				idTop = tempIdNum;
 			}
 		}
-		String id = "P" + idTop;
+		int nuovoId = idTop + 1;
+		String id = "P" + nuovoId;
 		String contributo = "";
 		if (codice.getImporto() < 0.50)
 			contributo = "piccolo";

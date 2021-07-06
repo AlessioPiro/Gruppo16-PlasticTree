@@ -1,0 +1,39 @@
+div{padding: 0px; margin:0px;}
+form{display: inline-block; margin: 2%}
+input[type=text], input[type = password], input[type = email]{border: 3px solid #ccc; transition: 0.3s; width: 300px; border-radius: 10px; padding: 10px 6px;}
+input[type=text]:focus, input[type= password]:focus, input[type = email]:focus{border: 3px solid black; border-radius: 10px; padding: 10px 6px; outline: none;}
+input[type="submit"]{background-color: white; color: black; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
+input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
+h1, h2{font-family: sans-serif, Helvetica, Verdana; color: white; text-shadow: 2px 2px 10px black; margin: 0px; margin-bottom: 10px; padding: 0px;}
+
+.contenitoreScrittaPlasticTree{display: flex; width: 100%; align-items: center; margin: 0px auto;}
+.plasticTreeScritta{width: 500px; align-items: center; margin: 0px auto;}
+
+.contenitoreDescrizioni{display: flex; width: 98%; flex-direction: column; align-items: center; justify-content: center; margin: 0px auto; padding: 0px;}
+
+.contenitoreProblema{display: flex; background-color: #ABDCB6; flex-direction: row; width: 70%; height: 200px; margin-bottom:10px; outline: 2px solid black;}
+.contenitoreFunziona{display: flex; background-color: #ABDCB6; flex-direction: row; width: 70%; height: 200px; margin-bottom:10px; outline: 2px solid black;}
+.contenitorePiuSiamo{display: flex; background-color: #ABDCB6; flex-direction: row; width: 70%; height: 200px; margin-bottom:10px; outline: 2px solid black;}
+
+.titoloETesto{width:50%; padding-top: 5px; padding-left: 5px;}
+.titoloSezione{text-color: white;}
+.testoSezione{text-shadow: 2px 2px 10px black; color: white; margin: 0px; padding: 0px; font-size: 15px;}
+.immagineIllustrativa{max-width: 380px; height: 100%; margin-left: auto;}
+
+.login{background-color: #ABDDB6; display: flex; width:400px; align-items: center; flex-direction: column; margin: 20px auto; padding: 5px; outline: 2px solid black;}
+.loginScritta{}
+.formLogin{display: flex; width:100%; align-items: center; flex-direction: column; margin: 0px auto; margin-bottom: 10px;}
+.errore{background-color: white; font-weight: bold; font-size: 20px; padding: 5px; outline: 2px solid red; margin:3px;}
+
+@media (max-width: 1200px){
+	.contenitoreProblema{flex-direction: column; width: 380px; height: 100%; margin-bottom:10px; outline: 2px solid black; align-items: center;}
+	.contenitoreFunziona{flex-direction: column; width: 380px; height: 100%; margin-bottom:10px; outline: 2px solid black; align-items: center;}
+	.contenitorePiuSiamo{flex-direction: column; width: 380px; height: 100%; margin-bottom:10px; outline: 2px solid black; align-items: center;}
+	.titoloSezione{text-align: center;}
+	.testoSezione{text-align: center;}
+	.titoloETesto{margin-bottom: 10px; width: 100%; padding: 5px;}
+}
+
+@media (max-width: 600px){
+	.plasticTreeScritta{width:400px;}
+}

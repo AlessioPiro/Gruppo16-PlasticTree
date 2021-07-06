@@ -3,25 +3,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<%!
+		String id, titolo, descrizione, nomeUtente, cognomeUtente;
+		float ricompensa;
+		boolean raggiunto, riscattato;
+	%>
+	<%
+		ArrayList<Obiettivo> obiettivi = (ArrayList<Obiettivo>) request.getAttribute("obiettivi");
+		ArrayList<ObiettivoUtente> obiettiviUtente = (ArrayList<ObiettivoUtente>) request.getAttribute("obiettiviUtente");
+		Utente altroUtente = (Utente) request.getAttribute("altroUtente");
+		nomeUtente = altroUtente.getNome();
+		cognomeUtente = altroUtente.getCognome();
+	%>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="Css/obiettiviUtente.css" type="text/css">
-		<title>Obiettivi - Plastic Tree</title>
+		<title>Obiettivi di <%=nomeUtente%> <%=cognomeUtente%> - Plastic Tree</title>
 	</head>
 	<body>
 		<jsp:include page="header.jsp"/>
-		<%!
-			String id, titolo, descrizione, nomeUtente, cognomeUtente;
-			float ricompensa;
-			boolean raggiunto, riscattato;
-		%>
-		<%
-			//ArrayList<Obiettivo> obiettivi = (ArrayList<Obiettivo>) request.getAttribute("obiettivi");
-			//nomeUtente = request.getAttribute("nome");
-			//cognomeUtente = request.getAttribute("cognome");
-		%>
 		<% 
 			//Codice di Test
-			nomeUtente = "Lorenzo";
+			/* nomeUtente = "Lorenzo";
 			cognomeUtente = "Aiello";
 			ArrayList<Obiettivo> obiettivi = new ArrayList<Obiettivo>();
 			Obiettivo test1 = new Obiettivo("1", "Primo Passo", "Inserisci il tuo primo codice.", 0, true, false);
@@ -33,31 +35,34 @@
 			obiettivi.add(test2);
 			obiettivi.add(test3);
 			obiettivi.add(test4);
-			obiettivi.add(test5);
+			obiettivi.add(test5); */
 		%>
 		<div class="obiettiviEScrittaContenitore">
 			<h3 class="obiettiviTesto">Obiettivi di <%=nomeUtente%> <%=cognomeUtente%></h3>
 			<div class="obiettiviContenitore">
 				<%
+					int cont = 0;	
 					for(Obiettivo o : obiettivi)
 					{
+						ObiettivoUtente ou = obiettiviUtente.get(cont);
 						id = o.getIdObiettivo();
 						titolo = o.getTitolo();
 						descrizione = o.getDescrizione();
 						ricompensa = o.getRicompensa();
-						raggiunto = o.isRaggiunto();
-						riscattato = o.isRiscattato();
+						raggiunto = ou.isRaggiunto();
+						riscattato = ou.isRiscattato();
+						cont++;
 				%>
 				<%
 					if (!riscattato)
 					{
 				%>
 				<div class="obiettivo" id="obiettivoBloccato">
-					<img class="obiettivoFoto" alt="" src="fotoObiettivi/1.png">
+					<img class="obiettivoFoto" alt="" src="fotoObiettivi/<%=id%>.png">
 					<div class="scritteContenitore">
 						<p class="titoloObiettivo"><%=titolo%></p>
 						<p class="descrizioneObiettivo"><%=descrizione%></p>
-						<p class="ricompensaObiettivo">Ricompensa: &euro;<%=ricompensa%></p>
+						<p class="ricompensaObiettivo">Ricompensa: &euro;<%=ricompensa%>0</p>
 					</div>
 					<div class="formRiscatta">
 						<p class="scrittaRiscattato">Bloccato</p>
@@ -73,7 +78,7 @@
 					<div class="scritteContenitore">
 						<p class="titoloObiettivo"><%=titolo%></p>
 						<p class="descrizioneObiettivo"><%=descrizione%></p>
-						<p class="ricompensaObiettivo">Ricompensa: &euro;<%=ricompensa%></p>
+						<p class="ricompensaObiettivo">Ricompensa: &euro;<%=ricompensa%>0</p>
 					</div>
 					<div class="formRiscatta">
 						<p class="scrittaRiscattato">Raggiunto</p>

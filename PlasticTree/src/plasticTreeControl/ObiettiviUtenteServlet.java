@@ -37,15 +37,9 @@ public class ObiettiviUtenteServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		synchronized(session) {
-			if (session.getAttribute("dao") == null) //Il Dao va recuperato dalla sessione, questo è un codice per testare il sito non completo
-			{
-				Dao dao = new Dao(); 
-				session.setAttribute("dao", dao); 
-			}
 			Dao dao = (Dao) session.getAttribute("dao");
 			Utente utente = (Utente) session.getAttribute("utente");
-			Utente prova = new Utente("U1", "Lorenzo", "Aiello", new Date(), "Via Padova 33, Avellino", "laiello@gmail.com", "12345678");
-			ArrayList<ObiettivoUtente> obiettiviUtente = dao.getObiettiviUtente(prova); //prova va sostituito con utente
+			ArrayList<ObiettivoUtente> obiettiviUtente = dao.getObiettiviUtente(utente);
 			ArrayList<Obiettivo> obiettivi = dao.getTuttiObiettivi();
 			request.setAttribute("obiettiviUtente", obiettiviUtente);
 			request.setAttribute("obiettivi", obiettivi);

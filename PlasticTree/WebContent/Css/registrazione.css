@@ -1,0 +1,19 @@
+form{display: inline-block; margin: 2%}
+
+.contenitoreScrittaPlasticTree{display: flex; width: 100%; align-items: center; margin: 0px auto;}
+.plasticTreeScritta{width: 500px; align-items: center; margin: 0px auto;}
+
+.main-section{background-color: #ABDDB6; display: flex; width:500px; align-items: center; flex-direction: column; margin: 50px auto; padding: 5px; outline: 2px solid black;}
+.registration-form{display: flex; width:100%; align-items: center; flex-direction: column; margin: 0px auto; margin-bottom: 10px;}
+input[type=text], input[type = password], input[type = email], input[type = date]{border: 3px solid #ccc; transition: 0.3s; width: 300px; border-radius: 10px; padding: 10px 6px;}
+input[type=text]:focus, input[type= password]:focus, input[type = email]:focus{border: 3px solid black; border-radius: 10px; padding: 10px 6px; outline: none;}
+h1, h2{font-family: Verdana, Helvetica, sans-serif;}
+input[type="submit"]{background-color: white; color: black; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
+input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
+.button-container{text-align: center;}
+
+@media (max-width: 600px){
+	.main-section{width: 300px; margin: 20px auto;}
+	.plasticTreeScritta{width: 300px;}
+	input[type=text], input[type = password], input[type = email]{width: 200px;}
+}
