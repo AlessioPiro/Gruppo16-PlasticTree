@@ -1,20 +1,12 @@
 form{display: inline-block; margin: 2%}
-.fotoENome{background-color: #ABDCB6; width: 100%; height: 200px; display: flex; align-items: center; flex-direction: column; border-bottom: 2px solid black;}
-.fotoProfiloUtente{width: 120px; height: 120px; border-radius: 50%; margin-top: 15px;}
 
 
-.informazioniTesto{margin-left: 5%;}
-.informationFormContenitore{display: flex; flex-direction: column; align-items: left; width:50%; margin-bottom: 10px; margin-left: 5%;}
 input[type="submit"]{background-color: white;  color: black; border: none; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
 input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
-.infoUtente{font-family: Verdana, Helvetica, sans-serif; font-size: 10px;}
 
+.help{width:100%;height:100px;display: flex; flex-direction: column; align-items: center; border-bottom:2px solid black; margin-bottom:50px;}
+.helpImg{max-width: 200px; max-height: 200px;margin-left: 5px; margin-right: 5px; margin-top:-40px}
 
-.obiettivi{background-color: #ABDCB6; width: 100%; height: 100%; display: flex; flex-direction: column; outline: 2px solid black;}
-.obiettiviTesto{margin-left: 5%;}
-.obiettiviContenitore{display: flex; width:100%; align-items: center; flex-direction: column;}
-.immaginiObiettiviContenitore{}
-.obiettivo{width: 70px; height: 70px; border-radius: 50%; margin-left: 5px; margin-right: 5px;}
 
 
 .attivita{width: 100%; height: 100%; display: flex; flex-direction: column;}
@@ -41,3 +33,63 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 .miPiace{}
 .commenti{}
 .data{}
+
+
+.wrapper{
+  min-height: 100%;
+  margin-bottom: -8em;
+}
+
+.push{
+  height: 8em;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+ 
+}
+
+.nested-accordion {
+  margin-top: 0.5em;
+  cursor: pointer;
+  display: flex; 
+  flex-direction: rows; 
+  align-items: center;
+}
+.nested-accordion h3 {
+  padding: 0 0.5em;
+}
+.nested-accordion .comment {
+  line-height: 1.5;
+  padding: 0.5em;
+}
+.nested-accordion h3 {
+  color: #9b334e;
+}
+.nested-accordion h3:before {
+  content: "-";
+  padding-right: 0.25em;
+  color: #becbd2;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: "Lucida Console", Monaco, monospace;
+  position: relative;
+  right: 0;
+}
+.nested-accordion h3.selected {
+  background: #9b334e;
+  color: #fff;
+}
+.nested-accordion h3.selected:before {
+  content: "+";
+}
+.nested-accordion .comment {
+  color: #768e9d;
+  border: 0.063em solid #9b334e;
+  border-top: none;
+}
+.nested-accordion a {
+  text-decoration: none;
+  color: #9b334e;
+}

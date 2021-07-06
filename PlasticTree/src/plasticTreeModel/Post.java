@@ -47,6 +47,7 @@ public class Post {
 	public void setData(Date data) {
 		this.data = data;
 	}
+
 	public String getObiettivoPost()
 	{
 		String obiettivo = "";
