@@ -56,7 +56,7 @@ public class Post {
 		{
 			return obiettivo;
 		}
-		obiettivo = testo.substring(testo.lastIndexOf(":") + 1);
+		obiettivo = testo.substring(testo.lastIndexOf(":") + 2);
 		return obiettivo;
 	}
 	

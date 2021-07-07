@@ -487,33 +487,33 @@ public class Dao {
 			
 			//Creazione Post
 			Post p1 = new Post("P1", "Lorenzo ha dato un piccolo contributo all'ambiente, guadagnando 0.20 euro", u1, postData1, likePost1);
-			Post p2 = new Post("P2", "Lorenzo ha raggiunto l'obiettivo Primo Passo", u1, postData1, likePost2);
-			Post p3 = new Post("P3", "Patrizo ha dato un grande contributo all'ambiente, guadagnando 0.60 euro", u2, postData2, likePost3);
-			Post p4 = new Post("P4", "Lorenzo ha raggiunto l'obiettivo Primo Passo", u2, postData2, likePost4);
-			Post p5 = new Post("P5", "Patrizo ha dato un piccolo contributo all'ambiente, guadagnando 0.30 euro", u2, postData3, likePost5);
-			Post p6 = new Post("P6", "Gennaro ha raggiunto l'obiettivo Eremita", u3, postData3, likePost6);
+			Post p2 = new Post("P2", "Lorenzo ha raggiunto l'obiettivo: Primo Passo", u1, postData1, likePost2);
+			Post p3 = new Post("P3", "Patrizio ha dato un grande contributo all'ambiente, guadagnando 0.60 euro", u2, postData2, likePost3);
+			Post p4 = new Post("P4", "Patrizio ha raggiunto l'obiettivo: Primo Passo", u2, postData2, likePost4);
+			Post p5 = new Post("P5", "Patrizio ha dato un piccolo contributo all'ambiente, guadagnando 0.30 euro", u2, postData3, likePost5);
+			Post p6 = new Post("P6", "Gennaro ha raggiunto l'obiettivo: Eremita", u3, postData3, likePost6);
 			Post p7 = new Post("P7", "Oronzo ha dato un enorme contributo all'ambiente, guadagnando 1.20 euro", u4, postData4, likePost7);
-			Post p8 = new Post("P8", "Oronzo ha raggiunto l'obiettivo Primo Passo", u4, postData4, likePost8);
+			Post p8 = new Post("P8", "Oronzo ha raggiunto l'obiettivo: Primo Passo", u4, postData4, likePost8);
 			Post p9 = new Post("P9", "Franco ha dato un piccolo contributo all'ambiente, guadagnando 0.30 euro", u5, postData5, likePost9);
-			Post p10 = new Post("P10", "Franco ha raggiunto l'obiettivo Primo Passo", u5, postData5, likePost10);
-			Post p11 = new Post("P11", "Paola ha raggiunto l'obiettivo Conoscenti Verdi", u6, postData7, likePost11);
+			Post p10 = new Post("P10", "Franco ha raggiunto l'obiettivo: Primo Passo", u5, postData5, likePost10);
+			Post p11 = new Post("P11", "Paola ha raggiunto l'obiettivo: Conoscenti Verdi", u6, postData7, likePost11);
 			Post p12 = new Post("P12", "Francesco ha dato un piccolo contributo all'ambiente, guadagnando 0.30 euro", u7, postData6, likePost12);
-			Post p13 = new Post("P13", "Francesco ha raggiunto l'obiettivo Primo Passo", u7, postData6, likePost13);
+			Post p13 = new Post("P13", "Francesco ha raggiunto l'obiettivo: Primo Passo", u7, postData6, likePost13);
 			Post p14 = new Post("P14", "Donato ha dato un enorme contributo all'ambiente, guadagnando 1.30 euro", u9, postData8, likePost14);
-			Post p15 = new Post("P15", "Donato ha raggiunto l'obiettivo Primo Passo", u9, postData8, likePost15);
-			Post p16 = new Post("P16", "Donato ha raggiunto l'obiettivo Eremita", u9, postData10, likePost16);
+			Post p15 = new Post("P15", "Donato ha raggiunto l'obiettivo: Primo Passo", u9, postData8, likePost15);
+			Post p16 = new Post("P16", "Donato ha raggiunto l'obiettivo: Eremita", u9, postData10, likePost16);
 			Post p17 = new Post("P17", "Marco ha dato un grande contributo all'ambiente, guadagnando 0.60 euro", u10, postData12, likePost17);
-			Post p18 = new Post("P18", "Marco ha raggiunto l'obiettivo Primo Passo", u10, postData12, likePost18);
+			Post p18 = new Post("P18", "Marco ha raggiunto l'obiettivo: Primo Passo", u10, postData12, likePost18);
 			Post p19 = new Post("P19", "Lorenzo ha dato un piccolo contributo all'ambiente, guadagnando 0.30 euro", u11, postData5, likePost19);
-			Post p20 = new Post("P20", "Lorenzo ha raggiunto l'obiettivo Primo Passo", u11, postData5, likePost20);
+			Post p20 = new Post("P20", "Lorenzo ha raggiunto l'obiettivo: Primo Passo", u11, postData5, likePost20);
 			Post p21 = new Post("P21", "Lorenzo ha dato un enorme contributo all'ambiente, guadagnando 1.60 euro", u11, postData14, likePost21);
 			Post p22 = new Post("P22", "Lorenzo ha dato un piccolo contributo all'ambiente, guadagnando 0.30 euro", u12, postData15, likePost22);
-			Post p23 = new Post("P23", "Lorenzo ha raggiunto l'obiettivo Primo Passo", u12, postData15, likePost23);
+			Post p23 = new Post("P23", "Lorenzo ha raggiunto l'obiettivo: Primo Passo", u12, postData15, likePost23);
 			Post p24 = new Post("P24", "Giovanni ha dato un enorme contributo all'ambiente, guadagnando 1.60 euro", u13, postData12, likePost24);
-			Post p25 = new Post("P25", "Giovanni ha raggiunto l'obiettivo Primo Passo", u13, postData12, likePost25);
+			Post p25 = new Post("P25", "Giovanni ha raggiunto l'obiettivo: Primo Passo", u13, postData12, likePost25);
 			Post p26 = new Post("P26", "Ida ha dato un grande contributo all'ambiente, guadagnando 0.60 euro", u14, postData10, likePost26);
-			Post p27 = new Post("P27", "Ida ha raggiunto l'obiettivo Primo Passo", u14, postData10, likePost27);
-			Post p28 = new Post("P28", "Ester ha raggiunto l'obiettivo Conoscenti Verdo", u15, postData4, likePost28);
+			Post p27 = new Post("P27", "Ida ha raggiunto l'obiettivo: Primo Passo", u14, postData10, likePost27);
+			Post p28 = new Post("P28", "Ester ha raggiunto l'obiettivo: Conoscenti Verdi", u15, postData4, likePost28);
 			posts.add(p1); posts.add(p2); posts.add(p3); posts.add(p4); posts.add(p5); posts.add(p6); posts.add(p7); posts.add(p8); posts.add(p9); posts.add(p10); posts.add(p11); posts.add(p12); posts.add(p13); posts.add(p14); posts.add(p15); posts.add(p16);posts.add(p17); posts.add(p18); posts.add(p19); posts.add(p20); posts.add(p21); posts.add(p22); posts.add(p23); posts.add(p24); posts.add(p25); posts.add(p26); posts.add(p27); posts.add(p28); 
 			
 			//COMMENTI
@@ -676,7 +676,7 @@ public class Dao {
 		Date dataModificata = null;
 		try
 		{
-			dataModificata = parserModificaDati.parse(data);
+			dataModificata = parser.parse(data);
 		}
 		catch(ParseException e)
 		{
@@ -728,8 +728,20 @@ public class Dao {
 		return ricercati;
 	}
 	
+	public boolean isSeguito(Utente utenteProtagonista, Utente utenteDaSeguire) {  //verifica se la persona data come secondo parametro è già seguita da quella data come primo parametro
+		for(Utente u : utenteProtagonista.getFollower())
+		{
+			if (u.getIdUtente().equals(utenteDaSeguire.getIdUtente()))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public void seguiClick(Utente utenteProtagonista, Utente utenteDaSeguire) //Se la persona è già seguita, viene tolta dalla lista dei seguiti, altrimenti viene aggiunta alla lista dei seguiti
 	{
+		System.out.println(utenteDaSeguire);
 		for(Utente u : utenteProtagonista.getFollower())
 		{
 			if (u.getIdUtente().equals(utenteDaSeguire.getIdUtente()))
@@ -798,9 +810,9 @@ public class Dao {
 		ArrayList<Obiettivo> obiettivi = this.getTuttiObiettivi();
 		for (Obiettivo o : obiettivi)
 		{
-			if(o.getTitolo().equals(nome))
+			if(nome.contains(o.getTitolo()))
 			{
-				return o.getTitolo();
+				return o.getIdObiettivo();
 			}
 		}
 		return null;
@@ -991,7 +1003,7 @@ public class Dao {
 		String id = "P" + nuovoId;
 		String testo = utente.getNome() + " ha raggiunto l'obiettivo: " + obiettivo.getTitolo();
 		post = new Post(id, testo, utente);
-		this.getTuttiPost().add(post);
+		this.getTuttiPost().add(0, post);
 		
 		//Sblocco 013
 		ObiettivoUtente o13 = this.getObiettivoUtente("O13", utente);
@@ -1045,13 +1057,13 @@ public class Dao {
 		String contributo = "";
 		if (codice.getImporto() < 0.50)
 			contributo = "piccolo";
-		else if(codice.getImporto() > 0.50 && codice.getImporto() < 1)
+		else if(codice.getImporto() >= 0.50 && codice.getImporto() < 1)
 			contributo = "grande";
 		else
 			contributo = "enorme";
-		String testo = utente.getNome() + " ha dato un " + contributo + " contributo per la salvaguardia dell'ambiente, guadagnando " + codice.getImporto() + " euro";
+		String testo = utente.getNome() + " ha dato un " + contributo + " contributo per la salvaguardia dell'ambiente, guadagnando " + codice.getImporto() + "0 euro";
 		post = new Post(id, testo, utente);
-		this.getTuttiPost().add(post);
+		this.getTuttiPost().add(0, post);
 		
 		//Sblocco 013
 		ObiettivoUtente o13 = this.getObiettivoUtente("O13", utente);

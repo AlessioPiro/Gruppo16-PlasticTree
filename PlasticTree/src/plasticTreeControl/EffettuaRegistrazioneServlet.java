@@ -53,8 +53,12 @@ public class EffettuaRegistrazioneServlet extends HttpServlet {
 			String indirizzo = request.getParameter("indirizzo");
 			String data = request.getParameter("data");
 			
-			Dao dao = new Dao();
-			session.setAttribute("dao", dao);
+			Dao dao = (Dao) session.getAttribute("dao");
+			if(dao == null)
+			{
+				dao = new Dao();
+				session.setAttribute("dao", dao);
+			}
 			if(dao.isEmailDoppia(email))
 			{
 				request.setAttribute("registrationError", true);
@@ -64,7 +68,7 @@ public class EffettuaRegistrazioneServlet extends HttpServlet {
 			Utente u = dao.registrazione(nome, cognome, data, indirizzo, email, psw);
 			this.uploadImage(request, u.getIdUtente());
 			session.setAttribute("utente", u);
-			request.getRequestDispatcher("testingAlessio.jsp").forward(request, response); //testingAlessio va cambiato con profiloUtente
+			request.getRequestDispatcher("HomeServlet").forward(request, response);
 		}
 		
 	}

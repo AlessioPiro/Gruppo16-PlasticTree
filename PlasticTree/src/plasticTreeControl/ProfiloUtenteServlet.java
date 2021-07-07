@@ -35,7 +35,7 @@ public class ProfiloUtenteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
-	              "profiloUtente.jsp");
+	              "/profiloUtente.jsp");
 	      dispatcher.forward(request, response);
 	}
 

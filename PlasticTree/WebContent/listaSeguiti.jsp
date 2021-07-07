@@ -1,6 +1,13 @@
 <%@ page language="java" import="plasticTreeControl.*, plasticTreeModel.*, java.util.*, java.math.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<% 
+	Utente utenteControllo=(Utente) request.getSession().getAttribute("utente");
+	if (utenteControllo == null)
+	{
+		request.getRequestDispatcher("login.jsp").forward(request, response);
+	}
+%>
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

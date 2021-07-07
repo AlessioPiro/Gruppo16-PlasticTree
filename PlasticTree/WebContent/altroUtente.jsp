@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="plasticTreeModel.Utente" %> 
+    <%@page import="plasticTreeModel.Commento" %> 
     <%@page import="plasticTreeModel.ObiettivoUtente" %> 
 <%@page import="plasticTreeModel.Post" %> 
 <%@page import="plasticTreeModel.Dao" %> 
@@ -8,8 +9,6 @@
 <% Utente u=(Utente) request.getSession().getAttribute("utente"); 
    Utente guardato=(Utente) request.getAttribute("altroUtente"); 
    Dao dao= (Dao) request.getSession().getAttribute("dao");
-   if(dao==null){dao=new Dao();}
-   if(u==null){u=dao.getUtente("U1");}
 %>
 <!DOCTYPE html>
 <html>
@@ -23,8 +22,11 @@
         <script src="JS/altroUtente.js"></script>
 		<jsp:include page="header.jsp"/>
 		<div class="fotoENome">
-			<img class="fotoProfiloUtente" alt="" src="fotoUtente/<%=guardato.getIdUtente() %>.png">
-			<h2 class="nomeProfiloUtente"><%=guardato.getNome() %> <%=guardato.getCognome() %></h2>
+			<img class="fotoProfiloUtente" alt="" src="fotoUtente/<%=guardato.getIdUtente() %>.jpg">
+			<h3 class="nomeProfiloUtente"><%=guardato.getNome() %> <%=guardato.getCognome() %></h3>
+			<form action="SeguiServlet"><%if(dao.isSeguito(u, guardato)==false) {%><input class="segui" name="segui" type="submit" value="Segui"><%}else{ %><input class="segui" name="segui" type="submit" value="Non seguire più"><%} %>
+			<input type="hidden" name="utenteSeguito" value="<%=guardato.getIdUtente() %>">
+			</form>
 		</div>
 		<div class="informazioni">
 			<h3 class="informazioniTesto">Informazioni</h3>
@@ -36,7 +38,7 @@
 				</div>
 		</div>
 		<div class="obiettivi">
-			<h3 class="obiettiviTesto">Obbiettivi completati da <%=guardato.getNome() %></h3>
+			<h3 class="obiettiviTesto">Obiettivi completati da <%=guardato.getNome() %></h3>
 			<div class="obiettiviContenitore">
 				<div class="immaginiObiettiviContenitore">
 				  <%int end=5;
@@ -54,7 +56,7 @@
 				
 				<form action="ObiettiviAltroUtenteServlet" method="POST" name="">
 					<input class="mostraAltroPulsante" type="submit" value="Mostra altro">
-					<input  name="utente" type="hidden" value="<%=guardato.getIdUtente() %> ">
+					<input  name="altroUtente" type="hidden" value="<%=guardato.getIdUtente()%>">
 				</form>
 			</div>
 		</div>
@@ -66,15 +68,21 @@
 			       Post post=posts.get(j); %>
 			    
 				<div class="post">
-					<div class="creatorePost">
-						<img class="postFotoUtente" src="fotoUtente/<%=post.getUtente().getIdUtente() %>.png" onerror="icone/nophoto.jpg">
-						<h3 class="postNomeUtente"><%=post.getUtente().getNome() %> <%=post.getUtente().getCognome() %></h3>
-						<input class="pulsanteCondivisione" type="image" src="icone/condividi.png">
-						
-					</div>
+					<a href="AltroUtenteServlet?altroUtente=<%=post.getUtente().getIdUtente()%>" style="text-decoration: none;">
+						<div class="creatorePost">					
+							<img class="postFotoUtente" src="fotoUtente/<%=post.getUtente().getIdUtente() %>.jpg">
+							<h3 class="postNomeUtente"><%=post.getUtente().getNome() %> <%=post.getUtente().getCognome() %></h3>
+						</div>
+					</a>
 					<div class="contenutoPost">
 						<p class="postTesto"><%=post.getTesto() %></p>
-						<img class="postImmagine" alt="" src="fotoObiettivi/<%=post.getIdPost() %>.png" onerror="icone/nophoto.jpg">
+						<%String foto=post.getObiettivoPost();
+							String id = dao.getIdObiettivo(foto);
+						  if(id == null){
+							  id="noObiettivo";
+						  }
+						  %>
+						<img class="postImmagine" alt="" src="fotoObiettivi/<%=id%>.png">
 						<div class="interazioneContainer">
 							<div class="pulsantiContenitore">
 							   <%boolean mioLike=false;
@@ -90,15 +98,33 @@
 										<img class="cuore" src="icone/cuore.png">
 									</div>
 									<form action="LikeServlet" method="POST" name="">
-										<input class="miPiace" type="submit" value="Mi piace" <%if(mioLike==true){%> style="background-color:#FF0000;" <%} %>>
-										<input class="utenteLike" name="utenteLike" type="hidden" value="<%=u.getIdUtente() %> ">
-										<input class="idPost" name="idPost" type="hidden" value="<%=post.getIdPost() %> ">
-										<input class="pagina" name="pagina" type="hidden" value="altroUtente.jsp">
+										<input class="miPiace" type="submit" value="Mi piace" <%if(mioLike==true){%> style="background-color:#FF0000; " <%} %>>
+										<input class="utenteLike" name="utenteLike" type="hidden" value="<%=u.getIdUtente() %>">
+										<input class="idPost" name="idPost" type="hidden" value="<%=post.getIdPost() %>">
+										<input class="idUtenteGuardato" name="idUtenteGuardato" type="hidden" value="<%=guardato.getIdUtente()%>">
+										<input class="pagina" name="pagina" type="hidden" value="/altroUtente.jsp">
 									</form>
 								</div>
+								<%ArrayList<Commento> c=dao.getCommentiPost(post.getIdPost());%>
 								
-									<input class="commenti" type="submit" value="Commenti" onclick="confirm('brand')">
+								<datalist id="C<%=post.getIdPost() %>">
+								  <%for(int i=0;i<c.size();i++){ %>
+                                   <option value="<%=c.get(i).getTesto() %>" id="<%=c.get(i).getTesto() %>">
+                                     <%} %>
+                                 </datalist>
+                                 <datalist id="U<%=post.getIdPost() %>">
+								  <%for(int i=0;i<c.size();i++){ %>
+                                   <option value="<%=c.get(i).getUtente().getNome() %> <%=c.get(i).getUtente().getCognome() %>" id="<%=c.get(i).getUtente().getNome() %> <%=c.get(i).getUtente().getCognome() %>">
+                                     <%} %>
+                                 </datalist>
+                                 <datalist id="F<%=post.getIdPost() %>">
+								  <%for(int i=0;i<c.size();i++){ %>
+                                   <option value="<%=c.get(i).getUtente().getIdUtente() %>" id="<%=c.get(i).getUtente().getIdUtente() %>">
+                                     <%} %>
+                                 </datalist>
 								
+									<% String nomeCognome = u.getNome() + " " + u.getCognome();  %>
+									<div class="commenti"><input type="submit" value="Commenti" onclick="messageInfo('<%=u.getIdUtente() %>', '<%=post.getIdPost() %>', '<%=nomeCognome%>', '<%=guardato.getIdUtente()%>')"></div>								
 							</div>
 							<p class="data">[<%=post.getData().getDate() %>/<%=post.getData().getMonth()+1 %>/<%=post.getData().getYear()+1900 %>]</p>
 						</div>
@@ -109,5 +135,6 @@
 			
 		</div>
 		<jsp:include page="footer.jsp"/>
+		
 	</body>
 </html>

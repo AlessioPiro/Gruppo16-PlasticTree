@@ -15,6 +15,10 @@
 		%>
 		<%
 			ArrayList<Utente> listaUtenti = (ArrayList<Utente>) request.getAttribute("ricerca");
+			if (listaUtenti == null)
+			{
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
 			ricerca = (String) request.getAttribute("termineDiRicerca");
 		%>
 		<div class="ricercaEScrittaContenitore">

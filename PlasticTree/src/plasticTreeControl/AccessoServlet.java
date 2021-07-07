@@ -35,16 +35,20 @@ public class AccessoServlet extends HttpServlet {
 		synchronized(session) {
 			String email = request.getParameter("email");
 			String password = request.getParameter("psw");
-			Dao dao = new Dao();
-			session.setAttribute("dao", dao);
+			Dao dao = (Dao) session.getAttribute("dao");
+			if(dao == null)
+			{
+				dao = new Dao();
+				session.setAttribute("dao", dao);
+			}
 			Utente utente = dao.login(email, password);
 			if(utente == null)
 			{
 				request.setAttribute("loginError", true);
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 			session.setAttribute("utente", utente);
-			request.getRequestDispatcher("ObiettiviUtenteServlet").forward(request, response); //ObiettiviUtenteServlet va cambiato con index.jsp
+			request.getRequestDispatcher("HomeServlet").forward(request, response);
 		}
 	}
 

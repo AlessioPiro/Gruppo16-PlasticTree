@@ -41,8 +41,7 @@ public class RiscattaObiettivo extends HttpServlet {
 			Dao dao = (Dao) session.getAttribute("dao");
 			Utente utente = (Utente) session.getAttribute("utente");
 			String idObiettivo = request.getParameter("id");
-			Utente prova = new Utente("U1", "Lorenzo", "Aiello", new Date(), "Via Padova 33, Avellino", "laiello@gmail.com", "12345678");
-			dao.riscattaObiettivo(prova.getIdUtente(), idObiettivo); //prova va sostituito con utente
+			dao.riscattaObiettivo(utente.getIdUtente(), idObiettivo);
 			request.getRequestDispatcher("ObiettiviUtenteServlet").forward(request, response);
 		}
 	}

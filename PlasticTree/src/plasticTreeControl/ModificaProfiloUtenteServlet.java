@@ -37,42 +37,18 @@ public class ModificaProfiloUtenteServlet extends HttpServlet {
 		Utente u=(Utente) request.getSession().getAttribute("utente");
 		Dao dao= (Dao) request.getSession().getAttribute("dao");
 		
-		String nome = u.getNome();
-	      if (request.getParameter("nome") != null) {
-	        nome = request.getParameter("nome");
-	      }
-	      String cognome = u.getCognome();
-	      if (request.getParameter("cognome") != null) {
-	        cognome = request.getParameter("cognome");
-	      }
-	      String indirizzo = u.getIndirizzo();
-	      if (request.getParameter("indirizzo") != null) {
-	        indirizzo = request.getParameter("indirizzo");
-	      }
-	      String email = u.getEmail();
-	      if (request.getParameter("email") != null) {
-	        email = request.getParameter("email");
-	      }
-	      String pwd = u.getPassword();
-	      if (request.getParameter("psw") != null) {
-	        pwd = request.getParameter("psw");
-	      }
-	      SimpleDateFormat htmlFormat = new SimpleDateFormat("yyyy-MM-dd");
-	      Date birth=u.getNascita();
-	      if (request.getParameter("data") != null) {
-	      try {
-	          birth=htmlFormat.parse(request.getParameter("data"));
-	        } catch (java.text.ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	      }
+		String nome = request.getParameter("nome");
+	    String cognome = request.getParameter("cognome");
+	    String indirizzo = request.getParameter("indirizzo");
+	    String email = request.getParameter("email");
+	    String pwd = request.getParameter("psw");
+	    String data = request.getParameter("data");
 	      
-	      Utente um=dao.modificaDati(nome, cognome, birth.toString(), indirizzo, email, pwd, u);
-	      request.getSession().setAttribute("utente", um);
+	     Utente um=dao.modificaDati(nome, cognome, data, indirizzo, email, pwd, u);
+	     request.getSession().setAttribute("utente", um);
 	      
 	      RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
-	              "profiloUtente.jsp");
+	              "/profiloUtente.jsp");
 	      dispatcher.forward(request, response);
 	}
 

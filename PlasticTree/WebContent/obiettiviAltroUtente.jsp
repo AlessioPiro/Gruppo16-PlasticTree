@@ -12,6 +12,11 @@
 		ArrayList<Obiettivo> obiettivi = (ArrayList<Obiettivo>) request.getAttribute("obiettivi");
 		ArrayList<ObiettivoUtente> obiettiviUtente = (ArrayList<ObiettivoUtente>) request.getAttribute("obiettiviUtente");
 		Utente altroUtente = (Utente) request.getAttribute("altroUtente");
+		Utente u=(Utente) request.getSession().getAttribute("utente");
+		if (u == null)
+		{
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 		nomeUtente = altroUtente.getNome();
 		cognomeUtente = altroUtente.getCognome();
 	%>

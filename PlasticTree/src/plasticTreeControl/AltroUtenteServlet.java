@@ -39,7 +39,7 @@ public class AltroUtenteServlet extends HttpServlet {
 			String id=request.getParameter("altroUtente");
 			Utente u= dao.getUtente(id);
 			request.setAttribute("altroUtente", u);
-			request.getRequestDispatcher("altroUtente.jsp").forward(request, response);
+			request.getRequestDispatcher("/altroUtente.jsp").forward(request, response);
 		}
 	}
 

@@ -27,7 +27,7 @@
   <div class="contenitore">
       <div class=title><img class="ask" alt="" src="icone/askLogo.png" onclick="messageInfo('message')"> Inserisci il codice</div>
       <form action="AggiungiCreditoServlet" method="post">
-      <div class="codice"><input type="number" name="codice" id="codice" required> </div>
+      <div class="codice"><input type="text" name="codice" id="codice" required> </div>
       <div class="button"><input type="submit" name="conferma" value="Conferma""> </div>
       </form>
    </div>

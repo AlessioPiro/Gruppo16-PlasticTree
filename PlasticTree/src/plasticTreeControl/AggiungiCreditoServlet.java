@@ -32,7 +32,7 @@ public class AggiungiCreditoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Dao dao = new Dao();
+		Dao dao = (Dao)request.getSession().getAttribute("dao");
 		Utente u= (Utente) request.getSession().getAttribute("utente");
 		String codice= request.getParameter("codice");
 		
@@ -49,6 +49,7 @@ public class AggiungiCreditoServlet extends HttpServlet {
 			importo=dao.riscattaCodice(codice, u);
 			request.setAttribute("importo", importo);
 			request.setAttribute("conferma", true);
+			dao.creaPostCodice(u, dao.getCodice(codice));
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 		              "/aggiungiCredito.jsp");
 		      dispatcher.forward(request, response);

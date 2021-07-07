@@ -17,6 +17,10 @@
 		<%
 			ArrayList<Obiettivo> obiettivi = (ArrayList<Obiettivo>) request.getAttribute("obiettivi");
 			ArrayList<ObiettivoUtente> obiettiviUtente = (ArrayList<ObiettivoUtente>) request.getAttribute("obiettiviUtente");
+			if (obiettivi == null)
+			{
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
 		%>
 		<div class="obiettiviEScrittaContenitore">
 			<h3 class="obiettiviTesto">Obiettivi</h3>
