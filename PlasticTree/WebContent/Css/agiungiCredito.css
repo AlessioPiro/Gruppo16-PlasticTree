@@ -13,3 +13,8 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 @media (max-width: 600px){
 	.ask{width: 20px; height: 20px;}
 }
+
+.footer{
+	position: fixed; !important;
+	bottom: 0px; !important;
+}

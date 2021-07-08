@@ -108,6 +108,7 @@ function condividi(msg) {
     )
 }
 
+var vis = 1000;
 function conferma(profilo) {
     var w = 300;
     var h = 250;
@@ -128,15 +129,36 @@ function conferma(profilo) {
     var img = document.createElement('img');
 
     //regole di stile CSS
-    a.style.cssText = "width:250px; height:100px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
-    b.style.cssText = "width:100%; height:80px;margin-top:5px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
+    if(profilo!='no'){
+      a.style.cssText = "width:250px; height:100px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
+      b.style.cssText = "width:100%; height:80px;margin-top:5px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
+      input.innerHTML="Post condiviso su "+profilo+"!";
+    }
     
     input.style.cssText = "display: flex; flex-direction: column; align-items: center; font-family: Verdana, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; text-align:center;";
     
-    
-    input.innerHTML="Post condiviso su "+profilo+"!";
-    		
     	
+    	
+    if(profilo=='Facebook'){
+    	img.src="icone/facebooklogo.png";
+        img.style.cssText ="width: 50px; height: 50px; position:absolute; top:65px; left:110px; margin-left: 5px; margin-right: 5px; margin-bottom:5px;";
+    }else if(profilo=='Instagram'){
+    	img.src="icone/instagramlogo.png";
+    	img.style.cssText ="width: 50px; height: 50px; position:absolute; top:65px; left:110px; margin-left: 5px; margin-right: 5px; margin-bottom:5px;";
+    }else if(profilo=='Telegram'){
+    	img.src="icone/Telegramlogo.png";
+    	img.style.cssText ="width: 50px; height: 50px; position:absolute; top:65px; left:110px; margin-left: 5px; margin-right: 5px; margin-bottom:5px;";
+    }else if(profilo=='Twitter'){
+    	img.src="icone/Twitterlogo.png";
+    	img.style.cssText ="width: 50px; height: 50px; position:absolute; top:65px; left:110px; margin-left: 5px; margin-right: 5px; margin-bottom:5px;";
+    }else if(profilo=='Whatsapp'){
+    	img.src="icone/whatsapplogo.png";
+    	img.style.cssText ="width: 50px; height: 50px; position:absolute; top:65px; left:110px; margin-left: 5px; margin-right: 5px; margin-bottom:5px;";
+   }else if(profilo=='no'){
+    	input.innerHTML="Profilo modificato con successo!";
+    	a.style.cssText = "width:250px; height:60px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
+        b.style.cssText = "width:100%; height:40px;margin-top:5px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;"; 
+    }
     
    //buttons style
     y.style.cssText = "position:absolute; top:10px; right:-40px; width:40%; margin-bottom:10px; clear:both; border: none; background-color: transparent;";
@@ -145,9 +167,12 @@ function conferma(profilo) {
     document.body.appendChild(a);
     a.innerHTML = "<b>Conferma</b><br>";
     a.appendChild(b);
+    if(profilo!='no'){
+    	b.appendChild(img);
+    }
     b.appendChild(input);
     a.appendChild(y);
-    a.appendChild(img);
+    
     
     vis--;
 
@@ -160,8 +185,12 @@ function conferma(profilo) {
     )
 }
 
+
+
+
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
+    document.getElementById(elemId).style.cssText = "color:red; margin-left:80px;";
 }
 
 // Definisce una funzione per validare il form
@@ -404,4 +433,11 @@ function messageInfo(idUtente,idPost,nomeUtente) {
     	  }
         }
     )
+}
+
+function riempito(elemId){
+	document.getElementById(elemId).style.cssText = "background-color: white;";
+	document.getElementById("psw").style.cssText = "background-color: white;";
+	document.getElementById("sub").style.cssText = "background-color: #ABDCB6;";
+	document.getElementById("sub").disabled = false;
 }

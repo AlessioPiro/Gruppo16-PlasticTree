@@ -32,6 +32,7 @@ public class PortafoglioServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Dao dao = (Dao)request.getSession().getAttribute("dao");
 		Utente u= (Utente) request.getSession().getAttribute("utente");
 		String nome= request.getParameter("nome");
@@ -45,7 +46,7 @@ public class PortafoglioServlet extends HttpServlet {
 				if(dao.bonificoImportoCheck(importo, u)==true) {
 					dao.riscuoti(importo, u);
 					request.setAttribute("confermaPag", true);
-					request.setAttribute("msgPag", "Pagamento Riuscito!");
+					request.setAttribute("msgPag", "Pagamento Riuscito, riscossi -"+importo+"0 &euro;!");
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 				              "/portafoglio.jsp");
 				      dispatcher.forward(request, response);

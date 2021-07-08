@@ -6,8 +6,8 @@ form{display: inline-block; margin: 2%}
 .informazioniTesto{margin-left: 5%;}
 .informationFormContenitore{display: flex; width:50%; align-items: left; margin-left: 5%;}
 .information-form{width:100%; margin: 0px auto; margin-bottom: 10px;}
-input[type=text], input[type = password], input[type = email]{border: 1px solid #ccc; transition: 0.3s; width: 60%; border-radius: 10px; padding: 5px 3px;}
-input[type=text]:focus, input[type= password]:focus, input[type = email]:focus{border: 1px solid black; border-radius: 10px; padding: 5px 3px; outline: none;}
+input[type=text], input[type = password], input[type = email], input[type = date]{border: 1px solid #ccc; transition: 0.3s; width: 60%; border-radius: 10px; padding: 5px 3px; background-color: #bcbcbc;}
+input[type=text]:focus, input[type= password]:focus, input[type = email]:focus, input[type = date]:focus{border: 1px solid black; border-radius: 10px; padding: 5px 3px; outline: none; background-color: white;}
 input[type="submit"]{background-color: white;  color: black; border: none; font-family: Verdana, Helvetica, sans-serif; font-size:15px; padding: 6px 8px; font-weight: bold; transition: 0.3s; border: 1px solid black;}
 input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: pointer;}
 

@@ -19,8 +19,8 @@ function messageInfo(message) {
     var img = document.createElement('img');
 
     //regole di stile CSS
-    a.style.cssText = "width:250px; height:100px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
-    b.style.cssText = "width:100%; height:80px;margin-top:20px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
+    a.style.cssText = "width:250px; height:90px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
+    b.style.cssText = "width:100%; height:70px;margin-top:20px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
     
     input.style.cssText = "display: flex; flex-direction: column; align-items: center; font-family: Verdana, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; text-align:center;";
     input.innerHTML="Inserisci sulla riga il codice fornito dai plasticATM per poter incrementare il tuo credito!"
@@ -63,24 +63,22 @@ function conferma(importo,valido) {
     var a = document.createElement('div');
     var b = document.createElement('div');
     var input = document.createElement('p');
-    var input2 = document.createElement('p');
     var y = document.createElement('button');
     var img = document.createElement('img');
 
     //regole di stile CSS
-    a.style.cssText = "width:250px; height:100px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
-    b.style.cssText = "width:100%; height:80px;margin-top:5px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
+    a.style.cssText = "width:250px; height:60px; border:1px solid #bbb; border-radius:5px; padding:10px; background:#ABDCB6; box-shadow:0px 0px 8px #0006; position:absolute; top:40%; left:42%; margin:auto; font-family: \"Arial\", sans-serif; color:black;z-index:"+ vis+ ";";
+    b.style.cssText = "width:100%; height:40px;margin-top:5px; border-top:2px solid #000000; background:#FFFFFF; font-family: \"Arial\", sans-serif; color:black;";
     
     input.style.cssText = "display: flex; flex-direction: column; align-items: center; font-family: Verdana, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; text-align:center;";
-    input2.style.cssText = "display: flex; flex-direction: column; align-items: center; font-family: Verdana, Helvetica, sans-serif; font-size: 12px; margin-top: 2px; text-align:center;";
     
     if(valido==false){
     	    input.innerHTML="Codice non valido!"
-    	    	input2.innerHTML=""
+    	    	
     	    	
     	}else{
-    		input.innerHTML="Codice corretto"
-    		input2.innerHTML="Credito di +"+importo+"0&euro; aggiunto con successo!"
+    		
+    		input.innerHTML="Credito di +"+importo+"0&euro; aggiunto con successo!"
     	}
     
    //buttons style
@@ -91,7 +89,6 @@ function conferma(importo,valido) {
     a.innerHTML = "<b>Conferma</b><br>";
     a.appendChild(b);
     b.appendChild(input);
-    b.appendChild(input2);
     a.appendChild(y);
     a.appendChild(img);
     

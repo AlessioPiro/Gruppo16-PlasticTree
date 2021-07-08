@@ -46,7 +46,9 @@ public class ModificaProfiloUtenteServlet extends HttpServlet {
 	      
 	     Utente um=dao.modificaDati(nome, cognome, data, indirizzo, email, pwd, u);
 	     request.getSession().setAttribute("utente", um);
-	      
+	     request.setAttribute("confermaCond", true);
+	     String s="no";
+			request.setAttribute("profiloCond", s);
 	      RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 	              "/profiloUtente.jsp");
 	      dispatcher.forward(request, response);

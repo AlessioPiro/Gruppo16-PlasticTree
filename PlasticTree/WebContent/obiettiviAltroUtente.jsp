@@ -26,22 +26,7 @@
 	</head>
 	<body>
 		<jsp:include page="header.jsp"/>
-		<% 
-			//Codice di Test
-			/* nomeUtente = "Lorenzo";
-			cognomeUtente = "Aiello";
-			ArrayList<Obiettivo> obiettivi = new ArrayList<Obiettivo>();
-			Obiettivo test1 = new Obiettivo("1", "Primo Passo", "Inserisci il tuo primo codice.", 0, true, false);
-			Obiettivo test2 = new Obiettivo("2", "Frutti del Riciclaggio", "Riscuoti per la prima volta.", 0, false, false);
-			Obiettivo test3 = new Obiettivo("3", "Amici Verdi", "Segui piu' di dieci persone.", 0, true, true);
-			Obiettivo test4 = new Obiettivo("4", "Bottiglia di Bronzo", "Ricicla 10 bottiglie di plastica.", 0, true, true);
-			Obiettivo test5 = new Obiettivo("5", "Bottiglia d'Argento", "Bottiglia d'Argento.", 0, false, false);
-			obiettivi.add(test1);
-			obiettivi.add(test2);
-			obiettivi.add(test3);
-			obiettivi.add(test4);
-			obiettivi.add(test5); */
-		%>
+		
 		<div class="obiettiviEScrittaContenitore">
 			<h3 class="obiettiviTesto">Obiettivi di <%=nomeUtente%> <%=cognomeUtente%></h3>
 			<div class="obiettiviContenitore">
@@ -79,7 +64,7 @@
 					{
 				%>
 				<div class="obiettivo" id="obiettivoRiscattato">
-					<img class="obiettivoFoto" alt="" src="fotoObiettivi/1.png">
+					<img class="obiettivoFoto" alt="" src="fotoObiettivi/<%=id%>.png">
 					<div class="scritteContenitore">
 						<p class="titoloObiettivo"><%=titolo%></p>
 						<p class="descrizioneObiettivo"><%=descrizione%></p>

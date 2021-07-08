@@ -9,6 +9,16 @@
 <% Utente u=(Utente) request.getSession().getAttribute("utente"); 
    Utente guardato=(Utente) request.getAttribute("altroUtente"); 
    Dao dao= (Dao) request.getSession().getAttribute("dao");
+   boolean confermaCond=false;
+   String profilo="";
+   String profiloName="";
+   boolean seg=false;
+   if(request.getAttribute("confermaCond")!=null){
+   	confermaCond=(boolean) request.getAttribute("confermaCond");
+   	profilo=(String) request.getAttribute("profiloCond");
+   	profiloName=(String) request.getAttribute("profiloName");
+   	seg=(boolean) request.getAttribute("seguito");
+   	}
 %>
 <!DOCTYPE html>
 <html>
@@ -17,7 +27,7 @@
 	<link rel="stylesheet" href="Css/altroUtente.css" type="text/css">
 	<title>Profilo - Plastic Tree</title>
 	</head>
-	<body>
+	<body <%if(confermaCond==true){ %> onload="conferma('<%=profilo%>','<%=profiloName%>','<%=seg%>')"<%}%>>
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="JS/altroUtente.js"></script>
 		<jsp:include page="header.jsp"/>

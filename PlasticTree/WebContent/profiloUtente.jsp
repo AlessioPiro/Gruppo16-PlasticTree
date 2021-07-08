@@ -14,9 +14,7 @@
    if(request.getAttribute("confermaCond")!=null){
    	confermaCond=(boolean) request.getAttribute("confermaCond");
    	profilo=(String) request.getAttribute("profiloCond");
-   	}
-   if(dao==null){dao=new Dao();} 
-    if(u==null){u=dao.getUtente("U1");}%>
+   	}%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +22,7 @@
 	<link rel="stylesheet" href="Css/profiloUtente.css" type="text/css">
 	<title>Profilo - Plastic Tree</title>
 	</head>
-	<body <%if(confermaCond==true){ %> onload="conferma(<%=profilo%>)"<%} %>>
+	<body <%if(confermaCond==true){ %> onload="conferma('<%=profilo%>')"<%}%>>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script src="JS/profiloUtente.js"></script>
 		<jsp:include page="header.jsp"/>
@@ -36,26 +34,26 @@
 			<h3 class="informazioniTesto">Informazioni</h3>
 				<div class="informationFormContenitore">
 					<form class="information-form" name="infForm" onsubmit="return validateForm()" action="ModificaProfiloUtenteServlet" method="POST">
-						Nome: <input type="text" name="nome" value="<%=u.getNome() %>">
+						Nome: <input type="text" name="nome" id="nome" value="<%=u.getNome() %>" onkeydown="riempito('nome')">
 						<div id="nameErr"></div><br>
-						Cognome: <input type="text" name="cognome" value="<%=u.getCognome() %>">
+						Cognome: <input type="text" name="cognome" id="cognome" value="<%=u.getCognome() %>" onkeydown="riempito('cognome')">
 						<div id="surnameErr"></div><br>
 						<%
 						String pattern = "yyyy-MM-dd";
 						DateFormat df = new SimpleDateFormat(pattern);
 						String nascitaAsString = df.format(u.getNascita());
 						%>
-						Nato il: <input type="date" name="data" value="<%=nascitaAsString%>">
+						Nato il: <input type="date" name="data" id="data" value="<%=nascitaAsString%>" onkeydown="riempito('data')">
 						<div id="dataErr"></div><br>
-						Indirizzo: <input type="text" name="indirizzo" value="<%=u.getIndirizzo() %>">
+						Indirizzo: <input type="text" name="indirizzo" id="indirizzo" value="<%=u.getIndirizzo() %>" onkeydown="riempito('indirizzo')">
 						<div id="addressErr"></div><br>
-						Email: <input type="email" name="email" value="<%=u.getEmail() %>">
+						Email: <input type="email" name="email" id="email" value="<%=u.getEmail() %>" onkeydown="riempito('email')">
 						<div id="emailErr"></div><br>
-						Password: <input type="password" name="psw" placeholder="***********" value="">
+						Password: <input type="password" name="psw" id="psw" placeholder="***********" value="">
 						<div id="passwordErr"></div><br>
 						<!-- RIMUOVERE ERRORI DELLA CARTA IN JS -->
 						<div class="button-container">
-							<input type="submit" value="Salva modifiche">
+							<input type="submit" id="sub" value="Salva modifiche" disabled style="background-color: #ccc;">
 						</div>
 					</form>
 				</div>

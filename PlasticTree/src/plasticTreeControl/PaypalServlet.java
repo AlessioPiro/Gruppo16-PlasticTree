@@ -34,17 +34,20 @@ public class PaypalServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Dao dao = (Dao)request.getSession().getAttribute("dao");
 		Utente u= (Utente) request.getSession().getAttribute("utente");
-		float importo=Float.parseFloat( request.getParameter("importo"));
+		float importo=Float.parseFloat( request.getParameter("importoPaypal"));
 		
-		if(request.getParameter("importo")!=null&&!request.getParameter("importo").equals("")) {
+		if(request.getParameter("importoPaypal")!=null&&!request.getParameter("importoPaypal").equals("")) {
+			
 				if(dao.bonificoImportoCheck(importo, u)==true) {
+					
 					dao.riscuoti(importo, u);
 					request.setAttribute("confermaPag", true);
-					request.setAttribute("msgPag", "Pagamento Riuscito!");
+					request.setAttribute("msgPag",  "Pagamento Riuscito, riscossi -"+importo+"0 &euro;!");
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 				              "/portafoglio.jsp");
 				      dispatcher.forward(request, response);
 				}else {
+					
 					request.setAttribute("confermaPag", true);
 					request.setAttribute("msgPag", "Bisogna avere almeno &euro;10.00 per prelevare!");
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(

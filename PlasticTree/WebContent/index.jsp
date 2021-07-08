@@ -15,6 +15,7 @@
 		<title>Plastic Tree</title>
 	</head>
 	<body>
+	<div>
 		<div class="contenitoreScrittaPlasticTree">
 			<img class="plasticTreeScritta" src="icone/scritta.png" />
 		</div>
@@ -63,6 +64,9 @@
 			</form>
 		<a href="RegistrazioneServlet">Se non ti sei ancora registrato, clicca qui.</a>
 		</div>
+		</div>
+		<div>
 		<jsp:include page="footer.jsp"/>
+		</div>
 	</body>
 </html>

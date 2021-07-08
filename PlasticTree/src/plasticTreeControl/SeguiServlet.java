@@ -37,7 +37,10 @@ public class SeguiServlet extends HttpServlet {
 		Utente u2= dao.getUtente(id);
 		
 		dao.seguiClick(u, u2);
-		
+		request.setAttribute("confermaCond", true);
+		request.setAttribute("profiloCond", id);
+		request.setAttribute("profiloName", u2.getNome());
+		request.setAttribute("seguito", dao.isSeguito(u, u2));
 		request.setAttribute("altroUtente", u2);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 	              "/altroUtente.jsp");
