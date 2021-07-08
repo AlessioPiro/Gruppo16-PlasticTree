@@ -1,5 +1,6 @@
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
+    document.getElementById(elemId).style.cssText = "color:red;";
 }
 
 // Definisce una funzione per validare il form

@@ -119,7 +119,7 @@ public class Dao {
 			Utente u6 = new Utente("U6", "Paola", "Aiello", utenteData6, "Via Gianni 54, Salerno", "paiello@gmail.com", "12345678", 5, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
 			Utente u7 = new Utente("U7", "Francesco", "Costa", utenteData7, "Via Bologna 35, Milano", "fcosta@gmail.com", "12345678", 6, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
 			Utente u8 = new Utente("U8", "Carla", "Ancelotti", utenteData8, "Via Sicilia 31, Napoli", "cancelotti@gmail.com", "12345678", 9, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
-			Utente u9 = new Utente("U9", "Donato", "Di Donato", utenteData9, "Via Padova 66, Benevento", "cancelotti@gmail.com", "12345678", 12, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
+			Utente u9 = new Utente("U9", "Donato", "Di Donato", utenteData9, "Via Padova 66, Benevento", "ddidonato@gmail.com", "12345678", 12, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
 			Utente u10 = new Utente("U10", "Marco", "Casco", utenteData10, "Via Benevento 75, Caserta", "mcasco@gmail.com", "12345678", 0, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
 			Utente u11 = new Utente("U11", "Lorenzo", "Ostuni", utenteData11, "Via Poste 17, Torino", "lostuni@gmail.com", "12345678", 0, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
 			Utente u12 = new Utente("U12", "Lorenzo", "Maglia", utenteData12, "Via Trento 105, Roma", "lmaglia@gmail.com", "12345678", 5, new ArrayList<Utente>(), new ArrayList<ObiettivoUtente>());
@@ -168,10 +168,10 @@ public class Dao {
 			//Creazione obiettivi
 			Obiettivo o1 = new Obiettivo("O1", "Primo Passo", "Inserisci il tuo primo codice.", (float) 0.50);
 			Obiettivo o2 = new Obiettivo("O2", "Frutti del Riciclaggio", "Riscuoti per la prima volta.", (float) 0.20);
-			Obiettivo o3 = new Obiettivo("O3", "Conoscenti Verdi", "Segui 10 persone.", (float) 0.10);
-			Obiettivo o4 = new Obiettivo("O4", "Bottiglia di Bronzo", "Inserisci 10 codici.", (float) 0.10);
-			Obiettivo o5 = new Obiettivo("O5", "Bottiglia d'Argento", "Inserisci 50 codici.", (float) 0.20);
-			Obiettivo o6 = new Obiettivo("O6", "Bottiglia d'Oro", "Inserisci 200 codici.", (float) 0.50);
+			Obiettivo o3 = new Obiettivo("O3", "Bottiglia di Bronzo", "Inserisci 10 codici.", (float) 0.10);
+			Obiettivo o4 = new Obiettivo("O4", "Bottiglia d'Argento", "Inserisci 50 codici.", (float) 0.20);
+			Obiettivo o5 = new Obiettivo("O5", "Bottiglia d'Oro", "Inserisci 200 codici.", (float) 0.50);
+			Obiettivo o6 = new Obiettivo("O6", "Conoscenti Verdi", "Segui 10 persone.", (float) 0.10);
 			Obiettivo o7 = new Obiettivo("O7", "Amici Verdi", "Segui di 50 persone.", (float) 0.20);
 			Obiettivo o8 = new Obiettivo("O8", "Fratelli Verdi", "Segui di 200 persone.", (float) 0.20);
 			Obiettivo o9 = new Obiettivo("O9", "Eremita", "Commenta 10 volte.", (float) 0.10);
@@ -181,7 +181,7 @@ public class Dao {
 			Obiettivo o13 = new Obiettivo("O13", "Utente Navigato", "Pubblica 50 post.", (float) 0.20);
 			Obiettivo o14 = new Obiettivo("O14", "Influencer", "Pubblica 200 post.", (float) 0.50);
 			Obiettivo o15 = new Obiettivo("O15", "Platino", "Raggiungi tutti gli obiettivi.", (float) 0.50);
-			obiettivi.add(o1); obiettivi.add(o2); obiettivi.add(o4); obiettivi.add(o5); obiettivi.add(o6); obiettivi.add(o3); obiettivi.add(o7); obiettivi.add(o8); obiettivi.add(o9); obiettivi.add(o10); obiettivi.add(o11); obiettivi.add(o12); obiettivi.add(o13); obiettivi.add(o14); obiettivi.add(o15);
+			obiettivi.add(o1); obiettivi.add(o2); obiettivi.add(o3); obiettivi.add(o4); obiettivi.add(o5); obiettivi.add(o6); obiettivi.add(o7); obiettivi.add(o8); obiettivi.add(o9); obiettivi.add(o10); obiettivi.add(o11); obiettivi.add(o12); obiettivi.add(o13); obiettivi.add(o14); obiettivi.add(o15);
 			
 			//Obiettivi degli utenti
 			//Utente 1
@@ -423,21 +423,21 @@ public class Dao {
 			ObiettivoUtente ou210 = new ObiettivoUtente("O15", "U14", false, false);
 			
 			//Utente 15
-			ObiettivoUtente ou211 = new ObiettivoUtente("O1", "U1", true, false);
-			ObiettivoUtente ou212 = new ObiettivoUtente("O2", "U1", false, false);
-			ObiettivoUtente ou213 = new ObiettivoUtente("O3", "U1", true, true);
-			ObiettivoUtente ou214 = new ObiettivoUtente("O4", "U1", false, false);
-			ObiettivoUtente ou215 = new ObiettivoUtente("O5", "U1", false, false);
-			ObiettivoUtente ou216 = new ObiettivoUtente("O6", "U1", false, false);
-			ObiettivoUtente ou217 = new ObiettivoUtente("O7", "U1", false, false);
-			ObiettivoUtente ou218 = new ObiettivoUtente("O8", "U1", false, false);
-			ObiettivoUtente ou219 = new ObiettivoUtente("O9", "U1", false, false);
-			ObiettivoUtente ou220 = new ObiettivoUtente("O10", "U1", false, false);
-			ObiettivoUtente ou221 = new ObiettivoUtente("O11", "U1", false, false);
-			ObiettivoUtente ou222 = new ObiettivoUtente("O12", "U1", false, false);
-			ObiettivoUtente ou223 = new ObiettivoUtente("O13", "U1", false, false);
-			ObiettivoUtente ou224 = new ObiettivoUtente("O14", "U1", false, false);
-			ObiettivoUtente ou225 = new ObiettivoUtente("O15", "U1", false, false);
+			ObiettivoUtente ou211 = new ObiettivoUtente("O1", "U15", true, false);
+			ObiettivoUtente ou212 = new ObiettivoUtente("O2", "U15", false, false);
+			ObiettivoUtente ou213 = new ObiettivoUtente("O3", "U15", true, true);
+			ObiettivoUtente ou214 = new ObiettivoUtente("O4", "U15", false, false);
+			ObiettivoUtente ou215 = new ObiettivoUtente("O5", "U15", false, false);
+			ObiettivoUtente ou216 = new ObiettivoUtente("O6", "U15", false, false);
+			ObiettivoUtente ou217 = new ObiettivoUtente("O7", "U15", false, false);
+			ObiettivoUtente ou218 = new ObiettivoUtente("O8", "U15", false, false);
+			ObiettivoUtente ou219 = new ObiettivoUtente("O9", "U15", false, false);
+			ObiettivoUtente ou220 = new ObiettivoUtente("O10", "U15", false, false);
+			ObiettivoUtente ou221 = new ObiettivoUtente("O11", "U15", false, false);
+			ObiettivoUtente ou222 = new ObiettivoUtente("O12", "U15", false, false);
+			ObiettivoUtente ou223 = new ObiettivoUtente("O13", "U15", false, false);
+			ObiettivoUtente ou224 = new ObiettivoUtente("O14", "U15", false, false);
+			ObiettivoUtente ou225 = new ObiettivoUtente("O15", "U15", false, false);
 			
 			obiettiviUtente.add(ou1); obiettiviUtente.add(ou2); obiettiviUtente.add(ou3); obiettiviUtente.add(ou4); obiettiviUtente.add(ou5); obiettiviUtente.add(ou6); obiettiviUtente.add(ou7); obiettiviUtente.add(ou8); obiettiviUtente.add(ou9); obiettiviUtente.add(ou10); obiettiviUtente.add(ou11); obiettiviUtente.add(ou12); obiettiviUtente.add(ou13); obiettiviUtente.add(ou14); obiettiviUtente.add(ou15); obiettiviUtente.add(ou16); obiettiviUtente.add(ou17); obiettiviUtente.add(ou18); obiettiviUtente.add(ou19); obiettiviUtente.add(ou20); obiettiviUtente.add(ou21); obiettiviUtente.add(ou22); obiettiviUtente.add(ou23); obiettiviUtente.add(ou24); obiettiviUtente.add(ou25); obiettiviUtente.add(ou26); obiettiviUtente.add(ou27); obiettiviUtente.add(ou28); obiettiviUtente.add(ou29); obiettiviUtente.add(ou30);
 			obiettiviUtente.add(ou31); obiettiviUtente.add(ou32); obiettiviUtente.add(ou33); obiettiviUtente.add(ou34); obiettiviUtente.add(ou35); obiettiviUtente.add(ou36); obiettiviUtente.add(ou37); obiettiviUtente.add(ou38); obiettiviUtente.add(ou39); obiettiviUtente.add(ou40); obiettiviUtente.add(ou41); obiettiviUtente.add(ou42); obiettiviUtente.add(ou43); obiettiviUtente.add(ou44); obiettiviUtente.add(ou45); obiettiviUtente.add(ou46); obiettiviUtente.add(ou47); obiettiviUtente.add(ou48); obiettiviUtente.add(ou49); obiettiviUtente.add(ou50); obiettiviUtente.add(ou51); obiettiviUtente.add(ou52); obiettiviUtente.add(ou53); obiettiviUtente.add(ou54); obiettiviUtente.add(ou55); obiettiviUtente.add(ou56); obiettiviUtente.add(ou57); obiettiviUtente.add(ou58); obiettiviUtente.add(ou59); obiettiviUtente.add(ou60);
@@ -637,6 +637,26 @@ public class Dao {
 		}
 		utente = new Utente(id, nome, cognome, dataRegistrazione, indirizzo, email, password);
 		utenti.add(utente);
+		
+		ObiettivoUtente ou1 = new ObiettivoUtente("O1", id, false, false);
+		ObiettivoUtente ou2 = new ObiettivoUtente("O2", id, false, false);
+		ObiettivoUtente ou3 = new ObiettivoUtente("O3", id, false, false);
+		ObiettivoUtente ou4 = new ObiettivoUtente("O4", id, false, false);
+		ObiettivoUtente ou5 = new ObiettivoUtente("O5", id, false, false);
+		ObiettivoUtente ou6 = new ObiettivoUtente("O6", id, false, false);
+		ObiettivoUtente ou7 = new ObiettivoUtente("O7", id, false, false);
+		ObiettivoUtente ou8 = new ObiettivoUtente("O8", id, false, false);
+		ObiettivoUtente ou9 = new ObiettivoUtente("O9", id, false, false);
+		ObiettivoUtente ou10 = new ObiettivoUtente("O10", id, false, false);
+		ObiettivoUtente ou11 = new ObiettivoUtente("O11", id, false, false);
+		ObiettivoUtente ou12 = new ObiettivoUtente("O12", id, false, false);
+		ObiettivoUtente ou13 = new ObiettivoUtente("O13", id, false, false);
+		ObiettivoUtente ou14 = new ObiettivoUtente("O14", id, false, false);
+		ObiettivoUtente ou15 = new ObiettivoUtente("O15", id, false, false);
+		obiettiviUtente.add(ou1); obiettiviUtente.add(ou2); obiettiviUtente.add(ou3); obiettiviUtente.add(ou4); obiettiviUtente.add(ou5);
+		obiettiviUtente.add(ou6); obiettiviUtente.add(ou7); obiettiviUtente.add(ou8); obiettiviUtente.add(ou9); obiettiviUtente.add(ou10);
+		obiettiviUtente.add(ou11); obiettiviUtente.add(ou12); obiettiviUtente.add(ou13); obiettiviUtente.add(ou14); obiettiviUtente.add(ou15);
+		
 		return utente;
 	}
 	
@@ -752,13 +772,13 @@ public class Dao {
 		}
 		utenteProtagonista.getFollower().add(utenteDaSeguire);
 		
-		//Sblocco obiettivo O3
-		ObiettivoUtente o3 = this.getObiettivoUtente("O3", utenteProtagonista);
-		if(!o3.isRaggiunto())
+		//Sblocco obiettivo O6
+		ObiettivoUtente o6 = this.getObiettivoUtente("O6", utenteProtagonista);
+		if(!o6.isRaggiunto())
 		{
 			if(utenteProtagonista.getFollower().size() > 9)
 			{
-				this.sbloccaObiettivo(utenteProtagonista.getIdUtente(), "O3");
+				this.sbloccaObiettivo(utenteProtagonista.getIdUtente(), "O6");
 			}			
 		}
 		
@@ -895,9 +915,9 @@ public class Dao {
 				ricompensa = obiettivoOggetto.getRicompensa();
 				this.creaPostObiettivo(this.getUtente(utente), this.getObiettivo(obiettivo));
 				
-				//Sblocco obiettivo 12
-				ObiettivoUtente o12 = this.getObiettivoUtente("O12", this.getUtente(utente));
-				if(!o12.isRaggiunto())
+				//Sblocco obiettivo 15
+				ObiettivoUtente o15 = this.getObiettivoUtente("O15", this.getUtente(utente));
+				if(!o15.isRaggiunto())
 				{
 					int cont = 0;
 					for(ObiettivoUtente ob : this.getObiettiviUtente(utente))
@@ -907,7 +927,7 @@ public class Dao {
 					}
 					if(cont > this.getTuttiObiettivi().size() - 2)
 					{
-						this.sbloccaObiettivo(utente, "O12");
+						this.sbloccaObiettivo(utente, "O15");
 					}
 				}
 				
@@ -1065,11 +1085,21 @@ public class Dao {
 		post = new Post(id, testo, utente);
 		this.getTuttiPost().add(0, post);
 		
+		//Sblocco 012
+		ObiettivoUtente o12 = this.getObiettivoUtente("O12", utente);
+		if(!o12.isRaggiunto())
+		{
+			if(this.getPostUtente(utente).size() > 9)
+			{
+				this.sbloccaObiettivo(utente.getIdUtente(), "O12");
+			}
+		}
+		
 		//Sblocco 013
 		ObiettivoUtente o13 = this.getObiettivoUtente("O13", utente);
 		if(!o13.isRaggiunto())
 		{
-			if(this.getPostUtente(utente).size() > 9)
+			if(this.getPostUtente(utente).size() > 49)
 			{
 				this.sbloccaObiettivo(utente.getIdUtente(), "O13");
 			}
@@ -1079,19 +1109,9 @@ public class Dao {
 		ObiettivoUtente o14 = this.getObiettivoUtente("O14", utente);
 		if(!o14.isRaggiunto())
 		{
-			if(this.getPostUtente(utente).size() > 49)
-			{
-				this.sbloccaObiettivo(utente.getIdUtente(), "O14");
-			}
-		}
-		
-		//Sblocco 015
-		ObiettivoUtente o15 = this.getObiettivoUtente("O15", utente);
-		if(!o15.isRaggiunto())
-		{
 			if(this.getPostUtente(utente).size() > 199)
 			{
-				this.sbloccaObiettivo(utente.getIdUtente(), "O15");
+				this.sbloccaObiettivo(utente.getIdUtente(), "O14");
 			}
 		}
 		
@@ -1231,11 +1251,19 @@ public class Dao {
 			this.sbloccaObiettivo(utente.getIdUtente(), "O1");
 		}
 		
+		//Sblocco obiettivo O3
+		ObiettivoUtente o3 = this.getObiettivoUtente("O3", utente);
+		if(!o3.isRaggiunto())
+		{
+			if(utente.getCounterCodici() > 9)
+				this.sbloccaObiettivo(utente.getIdUtente(), "O3");
+		}
+		
 		//Sblocco obiettivo O4
 		ObiettivoUtente o4 = this.getObiettivoUtente("O4", utente);
 		if(!o4.isRaggiunto())
 		{
-			if(utente.getCounterCodici() > 9)
+			if(utente.getCounterCodici() > 49)
 				this.sbloccaObiettivo(utente.getIdUtente(), "O4");
 		}
 		
@@ -1243,16 +1271,8 @@ public class Dao {
 		ObiettivoUtente o5 = this.getObiettivoUtente("O5", utente);
 		if(!o5.isRaggiunto())
 		{
-			if(utente.getCounterCodici() > 49)
-				this.sbloccaObiettivo(utente.getIdUtente(), "O5");
-		}
-		
-		//Sblocco obiettivo O6
-		ObiettivoUtente o6 = this.getObiettivoUtente("O6", utente);
-		if(!o6.isRaggiunto())
-		{
 			if(utente.getCounterCodici() > 199)
-				this.sbloccaObiettivo(utente.getIdUtente(), "O6");
+				this.sbloccaObiettivo(utente.getIdUtente(), "O5");
 		}
 		
 		return cod.getImporto();

@@ -42,14 +42,14 @@ public class PaypalServlet extends HttpServlet {
 					
 					dao.riscuoti(importo, u);
 					request.setAttribute("confermaPag", true);
-					request.setAttribute("msgPag",  "Pagamento Riuscito, riscossi -"+importo+"0 &euro;!");
+					request.setAttribute("msgPag",  "Pagamento Riuscito, riscossi "+importo+"0 &euro;!");
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 				              "/portafoglio.jsp");
 				      dispatcher.forward(request, response);
 				}else {
 					
 					request.setAttribute("confermaPag", true);
-					request.setAttribute("msgPag", "Bisogna avere almeno &euro;10.00 per prelevare!");
+					request.setAttribute("msgPag", "Bisogna prelevare un importo minimo di &euro;10.00!");
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(
 				              "/portafoglio.jsp");
 				      dispatcher.forward(request, response);

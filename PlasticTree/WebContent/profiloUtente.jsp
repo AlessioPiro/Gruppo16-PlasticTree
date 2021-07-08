@@ -10,10 +10,15 @@
 <% Utente u=(Utente) request.getSession().getAttribute("utente");
    Dao dao= (Dao) request.getSession().getAttribute("dao");
    boolean confermaCond=false;
+   boolean confermaMod=false;
    String profilo="";
    if(request.getAttribute("confermaCond")!=null){
    	confermaCond=(boolean) request.getAttribute("confermaCond");
    	profilo=(String) request.getAttribute("profiloCond");
+   	}
+   	if(request.getAttribute("confermaMod")!=null){
+   	confermaMod=(boolean) request.getAttribute("confermaMod");
+   	profilo=(String) request.getAttribute("profiloMod");
    	}%>
 <!DOCTYPE html>
 <html>
@@ -22,13 +27,16 @@
 	<link rel="stylesheet" href="Css/profiloUtente.css" type="text/css">
 	<title>Profilo - Plastic Tree</title>
 	</head>
-	<body <%if(confermaCond==true){ %> onload="conferma('<%=profilo%>')"<%}%>>
+	<body <%if(confermaCond==true){ %> onload="conferma(<%=profilo%>)"<%}%><%if(confermaMod==true){ %> onload="conferma('<%=profilo%>')"<%}%>>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script src="JS/profiloUtente.js"></script>
 		<jsp:include page="header.jsp"/>
 		<div class="fotoENome">
 			<img class="fotoProfiloUtente" alt="" src="fotoUtente/<%=u.getIdUtente() %>.jpg" >
 			<h2 class="nomeProfiloUtente"><%=u.getNome() %> <%=u.getCognome() %></h2>
+			<form class="pulsanteSeguiForm" action="ListaSeguitiServlet" method="POST" name="">
+				<input class="pulsanteSegui" type="submit" value="Utenti che segui">
+			</form>
 		</div>
 		<div class="informazioni">
 			<h3 class="informazioniTesto">Informazioni</h3>
@@ -61,29 +69,63 @@
 		<div class="obiettivi">
 			<h3 class="obiettiviTesto">I miei obiettivi</h3>
 			<div class="obiettiviContenitore">
+			<%
+				int cont = 0;
+				ArrayList<ObiettivoUtente> ob = dao.getObiettiviUtente(u);
+		    	for(ObiettivoUtente ou : ob){
+					if(ou.isRiscattato())
+					{
+						cont++;
+					}
+		    	}
+				if (cont < 1)
+				{
+			%>
+				<div class="testoNessunObiettivo">Non hai ancora raggiunto nessun obiettivo.</div>
+			<%
+				} 
+				else
+				{
+			%>
 				<div class="immaginiObiettiviContenitore">
-				  <%ArrayList<ObiettivoUtente> ob=dao.getObiettiviUtente(u);
-				     int end=5;
-				     for(int i=0;i<end;i++){
-					  if(i<ob.size()){
-						  if(ob.get(i).isRaggiunto()==true){
-						  String s= ob.get(i).getIdObiettivo();
-						  %><img class="obiettivo" alt="" src="fotoObiettivi/<%=s%>.png">
-						  <%}else{end++;}
-					  }
-				  }%>
+				  <%
+				    int end=5;
+				    for(ObiettivoUtente ou : ob){
+						if(ou.isRiscattato())
+						{
+					 		String s = ou.getIdObiettivo();
+					%>
+					<img class="obiettivo" alt="" src="fotoObiettivi/<%=s%>.png">
+					<%
+							end--;
+							if(end==0)
+							{
+								break;
+							}
+						}
+					 }
+				  %>
 					
 				</div>
 				<form action="ObiettiviUtenteServlet" method="POST" name="">
 					<input class="mostraAltroPulsante" type="submit" value="Mostra altro">
 				</form>
 			</div>
-			
+			<% 
+				}
+			%>
 		</div>
 		<div class="attivita">
 			<h3 class="attivitaTesto">Attivita'</h3>
 			<div class="insiemePost">
 			<% ArrayList<Post> posts= dao.getPostUtente(u);
+				if(posts.size()<1)
+				{
+			%>
+				<div class="attivitaNoPost">Non hai ancora svolto nessuna attivita'.</div>
+			<%
+				}
+				else{
 			   for(int j=0;j<posts.size();j++){
 			       Post post=posts.get(j); %>
 			    
@@ -150,7 +192,8 @@
 						</div>
 					</div>
 				</div>
-				<%} %>
+				<%}
+			   }%>
 			</div>
 			
 		</div>

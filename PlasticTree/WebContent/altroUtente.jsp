@@ -50,18 +50,42 @@
 		<div class="obiettivi">
 			<h3 class="obiettiviTesto">Obiettivi completati da <%=guardato.getNome() %></h3>
 			<div class="obiettiviContenitore">
+			<%
+				int cont = 0;
+				ArrayList<ObiettivoUtente> ob = dao.getObiettiviUtente(guardato);
+		    	for(ObiettivoUtente ou : ob){
+					if(ou.isRiscattato())
+					{
+						cont++;
+					}
+		    	}
+				if (cont < 1)
+				{
+			%>
+				<div class="testoNessunObiettivo"><%=guardato.getNome()%> non ha ancora raggiunto nessun obiettivo.</div>
+			<%
+				} 
+				else
+				{
+			%>
 				<div class="immaginiObiettiviContenitore">
-				  <%int end=5;
-				  ArrayList<ObiettivoUtente> ob=dao.getObiettiviUtente(guardato);
-				     for(int i=0;i<5;i++){
-					  if(i<ob.size()){
-						  if(ob.get(i).isRaggiunto()==true){
-						  String s= ob.get(i).getIdObiettivo();
-						  %><img class="obiettivo" alt="" src="fotoObiettivi/<%=s%>.png" onerror="icone/nophoto.jpg">
-						  <%}else{end++;}
-					  }
-					  }%>
-					
+				 <% 
+				    int end=5;
+				    for(ObiettivoUtente ou : ob){
+						if(ou.isRiscattato())
+						{
+					 		String s = ou.getIdObiettivo();
+					%>
+					<img class="obiettivo" alt="" src="fotoObiettivi/<%=s%>.png">
+					<%
+							end--;
+							if(end==0)
+							{
+								break;
+							}
+						}
+					 }
+				  %>
 				</div>
 				
 				<form action="ObiettiviAltroUtenteServlet" method="POST" name="">
@@ -69,12 +93,22 @@
 					<input  name="altroUtente" type="hidden" value="<%=guardato.getIdUtente()%>">
 				</form>
 			</div>
+			<% 
+				}
+			%>
 		</div>
 		<div class="attivita">
 			<h3 class="attivitaTesto">Attivita'</h3>
 			<div class="insiemePost">
 			<% ArrayList<Post> posts= dao.getPostUtente(guardato);
-			   for(int j=0;j<posts.size();j++){
+				if(posts.size()<1)
+				{
+			%>
+				<div class="attivitaNoPost"><%=guardato.getNome()%> non ha ancora svolto nessuna attivita'.</div>
+			<%
+				}
+				else{
+			   	for(int j=0;j<posts.size();j++){
 			       Post post=posts.get(j); %>
 			    
 				<div class="post">
@@ -140,7 +174,8 @@
 						</div>
 					</div>
 				</div>
-				<%} %>
+				<%}
+			   	}%>
 			</div>
 			
 		</div>

@@ -14,13 +14,16 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 .obiettivi{background-color: #ABDCB6; width: 100%; height: 100%; display: flex; flex-direction: column; outline: 2px solid black;}
 .obiettiviTesto{margin-left: 5%;}
 .obiettiviContenitore{display: flex; width:100%; align-items: center; flex-direction: column;}
+.testoNessunObiettivo{padding-bottom: 40px; font-size: 17px;}
 .immaginiObiettiviContenitore{}
 .obiettivo{width: 70px; height: 70px; border-radius: 50%; margin-left: 5px; margin-right: 5px; box-shadow: 5px 5px 5px black; -moz-box-shadow: 5px 5px 5px black; -webkit-box-shadow: 5px 5px 5px black; -khtml-box-shadow: 5px 5px 5px black;}
 
 
-.attivita{width: 100%; height: 100%; display: flex; flex-direction: column;}
+.attivita{width: 100%; height: 100%; display: flex; flex-direction: column; background-color: white;}
 
 .attivitaTesto{margin-left: 5%;}
+
+.attivitaNoPost{padding-bottom: 40px; font-size: 17px;}
 
 .insiemePost{display: flex; width:100%; flex-direction: column; align-items: center;}
 

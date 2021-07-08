@@ -24,7 +24,7 @@
 		<h1>Registrazione</h1>
 		<div>
 			<form class="registration-form" name="regForm" onsubmit="return validateForm()" action="EffettuaRegistrazioneServlet" method="POST" enctype="multipart/form-data">
-				Foto Profilo: <input type="file" name="file" id="file" accept= " .jpg"><br>
+				Foto Profilo: <input type="file" name="file" id="file" accept= " .jpg" required><br>
 				Nome: <input type="text" name="nome" placeholder="Nome">
 				<div id="nameErr"></div><br>
 				Cognome: <input type="text" name="cognome" placeholder="Cognome">

@@ -14,6 +14,7 @@ input[type="submit"]:hover{background-color: #ABDCB6; color: white; cursor: poin
 
 .attivitaTesto{margin-left: 5%;}
 
+.insiemeNoPost{display: flex; width: 100%; height:300px; flex-direction: row; align-items: center; color: grey; margin-bottom: 20px; justify-content: center;}
 .insiemePost{display: flex; width:100%; flex-direction: column; align-items: center;}
 
 .post{display: flex; width:400px; flex-direction: column; outline: 1px solid black; margin-bottom: 20px;}

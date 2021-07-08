@@ -145,9 +145,17 @@
   </div>
   <div class="push"></div>
 		<div class="attivita" id="attivita">
+		<% 
+			ArrayList<Post> posts= dao.getPostHome(u);
+			if(posts.size() < 1)
+			{
+		%>
+			<div class="insiemeNoPost">Segui qualcuno per vedere i loro post.</div>
+		<%
+			}
+		%>
 			<div class="insiemePost">
-			<% ArrayList<Post> posts= dao.getPostHome(u);
-			   for(int j=0;j<posts.size();j++){
+			<% for(int j=0;j<posts.size();j++){
 			       Post post=posts.get(j); %>
 			    
 				<div class="post">

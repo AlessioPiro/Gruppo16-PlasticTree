@@ -167,9 +167,9 @@ function conferma(idUtente, nomeUtente, seg) {
     
     input.style.cssText = "display: flex; flex-direction: column; align-items: center; font-family: Verdana, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; text-align:center;";
     if(seg=="true"){
-        input.innerHTML="Ora "+nomeUtente+" &egrave; un tuo amico!";
+        input.innerHTML="Ora segui "+nomeUtente+"!";
     }else{
-    	input.innerHTML=""+nomeUtente+" non &egrave; pi&ugrave; un tuo amico!";
+    	input.innerHTML="Hai smesso di seguire "+nomeUtente+"!";
     }
     
     	
@@ -186,7 +186,7 @@ function conferma(idUtente, nomeUtente, seg) {
     y.innerHTML = "X";
     y.id="button_updateSi";
     document.body.appendChild(a);
-    a.innerHTML = "<b>New Friend</b><br>";
+    a.innerHTML = "<b>Segui</b><br>";
     a.appendChild(b);
     b.appendChild(img);
     b.appendChild(input);

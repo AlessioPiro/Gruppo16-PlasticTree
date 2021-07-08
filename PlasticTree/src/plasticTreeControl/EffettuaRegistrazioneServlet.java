@@ -3,6 +3,7 @@ package plasticTreeControl;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -68,7 +69,7 @@ public class EffettuaRegistrazioneServlet extends HttpServlet {
 			Utente u = dao.registrazione(nome, cognome, data, indirizzo, email, psw);
 			this.uploadImage(request, u.getIdUtente());
 			session.setAttribute("utente", u);
-			request.getRequestDispatcher("HomeServlet").forward(request, response);
+			request.getRequestDispatcher("ProfiloUtenteServlet").forward(request, response);
 		}
 		
 	}
@@ -83,23 +84,29 @@ public class EffettuaRegistrazioneServlet extends HttpServlet {
 	
 	private String uploadImage(
 		HttpServletRequest request, String id) throws IOException, ServletException {
+		 String imgPath = "";
+		try
+		{
+			if (request.getPart("file") != null) {
+			      Part filePart = request.getPart(
+			          "file"); // Retrieves <input type="file" name="file">
+			      String fileName = Paths.get(filePart.getSubmittedFileName())
+			          .getFileName()
+			          .toString(); // MSIE fix.
+			      InputStream fileContent = filePart.getInputStream();
 
-	    String imgPath = "";
-	    if (request.getPart("file") != null) {
-	      Part filePart = request.getPart(
-	          "file"); // Retrieves <input type="file" name="file">
-	      String fileName = Paths.get(filePart.getSubmittedFileName())
-	          .getFileName()
-	          .toString(); // MSIE fix.
-	      InputStream fileContent = filePart.getInputStream();
+			      imgPath = id + ".jpg";
 
-	      imgPath = id + ".jpg";
+			      File uploads = new File(request.getServletContext().getRealPath("fotoUtente"));
+			      File file = new File(uploads, imgPath);
 
-	      File uploads = new File(request.getServletContext().getRealPath("fotoUtente"));
-	      File file = new File(uploads, imgPath);
-
-	      Files.copy(fileContent, file.toPath());
-	    }
+			      Files.copy(fileContent, file.toPath());
+			    }
+		}
+		catch (FileAlreadyExistsException e)
+		{
+			imgPath = id + ".jpg";
+		}
 
 	    return imgPath;
 		  }

@@ -28,7 +28,7 @@ public class ObiettivoUtente {
 		this.raggiunto = raggiunto;
 	}
 	public boolean isRiscattato() {
-		return riscattato;
+		return this.riscattato;
 	}
 	public void setRiscattato(boolean riscattato) {
 		this.riscattato = riscattato;
